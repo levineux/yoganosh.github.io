@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<section id="full-width" class="no-bot-pad">
+  <div class="container">
+    <div class="row">
+      <div class="{% if page.sidebar %}col-lg-9{% else %}col-lg-12{% endif %}">
+        <h1 class="section-heading callout text-center editable">{{ page.title }}</h1>
+
+        <div class="meta-container">
+          <span class="pull-left editable">By: {{ page.author }}</span>
+          <span class="pull-right editable">Date: April 1, 2016</span>
+        </div>
+        
+        <div class="clearfix"></div>
+        
+        <div class="blog-content editable">
+            {{ content }}
+        </div>
+
+        <hr class="blog-content-hr">
+
+      </div>
+
+      {% if page.sidebar %}
+        {% include siderail.html %}
+      {% endif %}
+
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,31 @@
+# Site settings
+title: Eight Chakras
+site_url: "http://www.eightchakras.com"
+version: 1.0
+excerpt_separator: <!--more-->
+
+baseurl: ""
+
+# Build settings
+permalink: "/story/:title/"
+sass:
+  sass_dir: _sass
+  style: compressed
+include: ['_pages']
+exclude:
+  - .gitignore
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+# Markdown settings
+markdown: kramdown
+kramdown:
+  auto_ids:       true
+  auto_id_stripping:    true
+
+# HTML Compression settings
+#compress_html:
+#  clippings: [ ]
+#  blanklines: false
+#  profile: false

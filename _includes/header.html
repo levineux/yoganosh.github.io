@@ -1,0 +1,135 @@
+{% comment %}
+<!--
+  Header
+
+  This partial is included on every page except to consistently
+  display the same header on each page.
+
+-->
+{% endcomment %}
+
+{% assign header = site.data.header-footer-content.header %}
+
+{% if page.layout == "homepage" %}
+<header class="hidden-xs">
+  <div class="site-header__header one-header">
+    <div class="header text-center minimized js-header-scroll-hide">
+      <div class="container center-block">
+        <div class="top-header">
+          <div class="left-menu">
+            <a href="/" class="logo"><img src="{{ site.baseurl }}/images/logo.svg" alt="Eight Chakras"></a>
+          </div>
+          <div class="contributer">
+            <!-- <span class="hidden-xs">CONTRIBUTE</span> -->
+            <span class="search js-search"><svg class="search-svg" width="25" height="25" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z"></path></svg></span>
+            <div class="toggle-search js-toggle-search">
+                <form>
+                    <input type="text" class="textInput" name="s" placeholder="Search Eight Chakras">
+                </form>
+                <span class="close js-search-close">×</span>
+            </div>
+            <a href="#" class="bar js-bar pull-right"><span class="menu-icon"><span></span><span></span><span></span></span></a>
+          </div>
+          <ul class="list list-inline">
+            <li class="active">
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="category.html">Wellness</a>
+            </li>
+            <li>
+                <a href="category.html">Body</a>
+            </li>
+            <li>
+                <a href="category.html">Lifestyle</a>
+            </li>
+            <li>
+                <a href="category.html">Love</a>
+            </li>
+            <li>
+                <a href="category.html">Mind</a>
+            </li>
+            <li>
+                <a href="category.html">Travel</a>
+            </li>
+          </ul>
+
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+{% endif %}
+<header id="header" class="fixed-xs popup-header{% if page.layout == "story"%} visible{% endif %}">
+  <div class="site-header__header{% if page.layout != "story"%} one-header{% endif %}">
+    <div class="header text-center minimized js-header-scroll-hide">
+      <div class="container center-block">
+        <div class="top-header">
+          <div class="left-menu">
+            <a href="/" class="logo"><img src="{{ site.baseurl }}/images/logo.svg" alt="Eight Chakras"></a>
+          </div>
+
+          <div class="contributer">
+            <!-- <span class="hidden-xs">CONTRIBUTE</span> -->
+            <span class="search js-search"><svg class="search-svg" width="25" height="25" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z"></path></svg></span>
+            <div class="toggle-search js-toggle-search">
+              <form>
+                <input type="text" class="textInput" name="s" placeholder="Search Eight Chakras">
+              </form>
+              <span class="close js-search-close">×</span>
+            </div>
+            <a href="#" class="bar js-bar pull-right"><span class="menu-icon"><span></span><span></span><span></span></span></a>
+          </div>
+          <ul class="list list-inline">
+            <li class="active">
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="category.html">Wellness</a>
+            </li>
+            <li>
+              <a href="category.html">Body</a>
+            </li>
+            <li>
+              <a href="category.html">Lifestyle</a>
+            </li>
+            <li>
+              <a href="category.html">Love</a>
+            </li>
+            <li>
+              <a href="category.html">Mind</a>
+            </li>
+            <li>
+              <a href="category.html">Travel</a>
+            </li>
+          </ul>
+
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+
+    {% if page.layout == "story"%}
+    <div class="header text-center minimized header-scroll js-header-scroll story-header">
+      <div class="container center-block">
+        <div class="top-header">
+          <div class="left-menu">
+            <a href="{{ site.baseurl }}/" class="logo-symbol"><img src="{{ site.baseurl }}/images/logo-symbol.svg" alt="Eight Chakras"></a>
+          </div>
+         <span class="story-title hidden-xs">What Kind of Yoga is Right for You?</span>
+          <div class="right-menu">
+            <a href="#" class="visible-xs-inline-block js-show-share-header"><i class="fa fa-share"></i> SHARE</a>
+            <a href="#" class="js-hide-share-header" style="display: none;">&times;</a>
+            <div class="js-share-header"></div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
+
+</header>
+

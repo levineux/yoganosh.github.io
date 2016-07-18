@@ -1,0 +1,74 @@
+{% comment %}
+<!--
+  HEAD
+
+  This partial is included on every page to consistently display the same HEAD tag
+  with different content where necessary per page.
+
+-->
+{% endcomment %}
+
+  <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+
+  {% if page.description %}
+  <meta name="description" content="{{ page.description }}" >
+  {% endif %}
+
+  <meta name="description" content="Eight Chakras provides real news for a natural and healthy lifestyle based on the wisdom of Yoga." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" value="summary">
+
+  <!-- Open Graph data -->
+  <meta property="og:site_name" content="{{ site.title }}" />
+  <meta property="og:url" content="{{ site.site_url }}{{ page.url }}" />
+  {% for og in page.open-graph %}
+    {% if og[0] == "image" %}
+      {% capture og_value %}{{ site.site_url }}/images/{{og[1]}}{% endcapture %}
+    {% elsif og[0] == "title" %}
+      {% capture og_value %}{{ page.title }}{% endcapture %}
+      {% if page.layout == "blog" %}
+        {% capture og_value %}{{ og_value }} - {{ site.title }}{% endcapture %}
+      {% endif %}
+    {% else %}
+      {% assign og_value = og[1] %}
+    {%endif%}
+    <meta property="og:{{og[0]}}" content="{{og_value}}">
+  {% endfor %}
+  {% if page.open-graph.description == null %}
+    <meta property="og:description" content="{{ page.description }}" />
+  {% endif %}
+
+  <link rel="canonical" href="{{ site.site_url }}{{ page.url }}" />
+  <meta charset="UTF-8">
+  <script src="https://use.typekit.net/uul1tfe.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/normalize.css"/>
+  <link rel="stylesheet" href="{{ site.baseurl }}/flexboxgrid-6.3.0/css/flexboxgrid.min.css"/>
+  <link rel="stylesheet" href="{{ site.baseurl }}/jssocials-1.2.1/dist/jssocials.css"/>
+  <link rel="stylesheet" href="{{ site.baseurl }}/jssocials-1.2.1/dist/jssocials-theme-flat.css"/>
+  <link rel="stylesheet" href="{{ site.baseurl }}/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css"/>
+  <link rel="apple-touch-icon" sizes="57x57" href="{{ site.baseurl }}/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="{{ site.baseurl }}/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="{{ site.baseurl }}/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ site.baseurl }}/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="{{ site.baseurl }}/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="{{ site.baseurl }}/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="{{ site.baseurl }}/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="{{ site.baseurl }}/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="{{ site.baseurl }}/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="{{ site.baseurl }}/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="{{ site.baseurl }}/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="{{ site.baseurl }}/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="{{ site.baseurl }}/manifest.json">
+  <link rel="mask-icon" href="{{ site.baseurl }}/safari-pinned-tab.svg">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="{{ site.baseurl }}/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="referrer" content="unsafe-url">
+  <style>{% include inline-styles.html %}</style>
+
+</head>

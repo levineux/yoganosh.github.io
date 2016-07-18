@@ -1,0 +1,24 @@
+---
+---
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+
+{% include head.html %}
+
+<body>
+	<div class="wrapper js-wrapper fixed-header {% if page.layout == "story" %}page-story scroll{% else %}main-header{% endif %}">
+
+  {% include header.html %}
+
+    {{ content }}
+
+  {% include overlay-header.html %}
+
+	</div>
+
+	{% include footer.html %}
+</body>
+
+</html>

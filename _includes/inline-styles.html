@@ -1,0 +1,399 @@
+{% comment %}
+<!--
+  inline styles
+
+  This partial is includes the logic that has some specific inline styles
+  depending on the page type.
+  Recommend: Moving these styles into the larger stylesheet for organizational
+  and optimization benefits.
+
+-->
+{% endcomment %}
+
+{% if page.layout == "homepage" %}
+  .wf-loading .header .top-header .list li a {
+    font-family: "Trebuchet MS";
+    font-size: 11px;
+    letter-spacing: 0.8px;
+  }
+  .wf-active .header .top-header .list li a {
+    font-family: "proxima-nova-condensed", sans-serif;
+    font-size: 12px;
+  }
+  .wf-loading .banner h1 {
+    font-family: "Trebuchet MS";
+    font-size: 58px;
+    line-height: 0.9;
+    letter-spacing: -3px;
+    padding-bottom: 10px;
+  }
+  .wf-active .banner h1 {
+    font-family: "proxima-nova-condensed", sans-serif;
+    font-size: 64px;
+    line-height: 0.98;
+  }
+  .wf-loading .banner h2 {
+    font-family: "Trebuchet MS";
+    font-size: 21px;
+    letter-spacing: -1px;
+    padding-bottom: 3px;
+  }
+  .wf-active .banner h2 {
+    font-family: "proxima-nova-condensed", sans-serif;
+    font-size: 24px;
+  }
+  .wf-loading .banner .search input[type="email"] {
+    font-family: "Trebuchet MS";
+    font-size: 15px;
+    letter-spacing: -1px;
+    line-height: 1.4;
+    font-weight: normal;
+  }
+  .wf-active .banner .search input[type="email"] {
+    font-family: "proxima-nova-condensed", sans-serif;
+    font-size: 16px;
+  }
+  .wf-loading .banner .search input[type="submit"] {
+    font-family: "Trebuchet MS";
+    font-size: 12px;
+  }
+  .wf-active .banner .search input[type="submit"] {
+    font-family: "proxima-nova-condensed", sans-serif;
+    font-size: 14px;
+  }
+  .wf-loading .latest-stories h3 {
+    font-family: "Trebuchet MS";
+    font-size: 15px;
+    line-height: 1.4;
+    letter-spacing: -1px;
+  }
+  .wf-active .latest-stories h3 {
+    font-family: "proxima-nova-condensed", sans-serif;
+    font-size: 16px;
+  }
+  .wf-loading .latest-stories article h2 {
+    font-family: "Trebuchet MS";
+    font-size: 25px;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    padding-bottom: 4px;
+  }
+  .wf-active .latest-stories article h2 {
+    font-family: "proxima-nova-condensed", sans-serif;
+    font-size: 28px;
+    line-height: 1.2;
+  }
+  @media (max-width: 767px) {
+    .wf-loading .banner h1 {
+      font-family: "Trebuchet MS";
+      font-size: 30px;
+      line-height: 0;
+      letter-spacing: -1px;
+      line-height: 0.4;
+      vertical-align: bottom;
+      padding-top: 8px;
+    }
+    .wf-active .banner h1 {
+      font-family: "proxima-nova-condensed", sans-serif;
+      font-size: 34px;
+      line-height: 0.98;
+    }
+    .wf-loading .banner h2 {
+      font-family: "Trebuchet MS";
+      font-size: 15px;
+      line-height: 130%;
+      letter-spacing: 0;
+    }
+    .wf-active .banner h2 {
+      font-family: "proxima-nova-condensed", sans-serif;
+      font-size: 18px;
+    }
+    .wf-loading .latest-stories h3 {
+      font-family: "Trebuchet MS";
+      font-size: 15px;
+    }
+    .wf-active .latest-stories h3 {
+      font-family: "proxima-nova-condensed", sans-serif;
+      font-size: 16px;
+    }
+    .wf-loading .latest-stories article h2 {
+      font-family: "Trebuchet MS";
+      font-size: 20px;
+    }
+    .wf-active .latest-stories article h2 {
+      font-family: "proxima-nova-condensed", sans-serif;
+      font-size: 24px;
+    }
+  }
+{% elsif page.layout == "about" %}
+  .wf-loading .header .top-header .list li a {
+    font-family: "Trebuchet MS";
+    font-size: 11px;
+    letter-spacing: 0.8px;
+  }
+  .wf-active .header .top-header .list li a {
+    font-family: "proxima-nova-condensed", sans-serif;
+    font-size: 12px;
+  }
+  .wf-loading .latest-stories h3 {
+    font-family: "Trebuchet MS";
+    font-size: 15px;
+    line-height: 1.4;
+    letter-spacing: -1px;
+  }
+  .wf-active .latest-stories h3 {
+    font-family: "proxima-nova-condensed", sans-serif;
+    font-size: 16px;
+  }
+  .wf-loading .latest-stories article h2 {
+    font-family: "Trebuchet MS";
+    font-size: 25px;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    padding-bottom: 4px;
+  }
+  .wf-active .latest-stories article h2 {
+    font-family: "proxima-nova-condensed", sans-serif;
+    font-size: 28px;
+    line-height: 1.2;
+  }
+  @media (max-width: 767px) {
+    .wf-loading .latest-stories h3 {
+      font-family: "Trebuchet MS";
+      font-size: 15px;
+      }
+    .wf-active .latest-stories h3 {
+      font-family: "proxima-nova-condensed", sans-serif;
+      font-size: 16px;
+      }
+    .wf-loading .latest-stories article h2 {
+      font-family: "Trebuchet MS";
+      font-size: 20px;
+    }
+    .wf-active .latest-stories article h2 {
+      font-family: "proxima-nova-condensed", sans-serif;
+      font-size: 24px;
+    }
+  }
+{% elsif page.layout == "story" %}
+  .wf-loading .header .top-header .list li a {
+    font-family: "Trebuchet MS";
+    font-size: 11px;
+    letter-spacing: 0.8px;
+  }
+  .wf-active .header .top-header .list li a {
+    font-family: "proxima-nova-condensed", sans-serif;
+    font-size: 12px;
+  }
+  .wf-loading .story h1 {
+    font-family: "Trebuchet MS";
+    font-size: 32px;
+    line-height: 1.36;
+    letter-spacing: -1px;
+    padding-bottom: 4px;
+  }
+  .wf-active .story h1 {
+    font-family: "proxima-nova-condensed", sans-serif;
+    font-size: 36px;
+    line-height: 1.32;
+  }
+  .wf-loading footer .author {
+    font-family: "Trebuchet MS";
+    font-size: 16px;
+    letter-spacing: -1px;
+    line-height: 1.4;
+  }
+  .wf-active footer .author {
+    font-family: "proxima-nova-condensed", sans-serif;
+    font-size: 18px;
+  }
+  .wf-loading .story .description {
+    font-family: "Trebuchet MS";
+    font-size: 23px;
+    letter-spacing: -1px;
+    line-height: 1.48;
+  }
+  .wf-active .story .description, .wf-active .story .description p {
+    font-family: "proxima-nova-condensed", sans-serif;
+    font-size: 26px;
+    line-height: inherit;
+  }
+  @media (max-width: 767px) {
+    .wf-loading .story h1 {
+      font-family: "Trebuchet MS";
+      font-size: 26px;
+      line-height: 1.14;
+      margin-top: 20px;
+      margin-bottom: 5px;
+      color: rgba(0, 0, 0, 0.8);
+    }
+    .wf-active .story h1 {
+      font-family: "proxima-nova-condensed", sans-serif;
+      font-size: 28px;
+      line-height: 1.1;
+      margin-top: 20px;
+      margin-bottom: 5px;
+      color: rgba(0, 0, 0, 0.8);
+    }
+    .wf-loading footer .author {
+      font-family: "Trebuchet MS";
+      font-size: 12px;
+      letter-spacing: -1px;
+      color: #666666;
+    }
+    .wf-active footer .author {
+      font-family: "proxima-nova-condensed", sans-serif;
+      font-size: 13px;
+      color: #666666;
+    }
+    .wf-loading .story .description {
+      font-family: "proxima-nova-condensed", sans-serif;
+      font-size: 18px;
+      letter-spacing: -0.5px;
+      margin-top: 9px;
+      margin-bottom: 16px;
+    }
+    .wf-active .story .description {
+      font-family: "proxima-nova-condensed", sans-serif;
+      font-size: 20px;
+      letter-spacing: -0.3px;
+      margin-top: 9px;
+      margin-bottom: 16px;
+    }
+  }
+{% elsif page.layout == "category" %}
+  .wf-loading .header .top-header .list li a {
+    font-family: "Trebuchet MS";
+    font-size: 11px;
+    letter-spacing: 0.8px;
+  }
+  .wf-active .header .top-header .list li a {
+    font-family: "proxima-nova-condensed", sans-serif;
+    font-size: 12px;
+  }
+  .wf-loading .latest-stories h3 {
+    font-family: "Trebuchet MS";
+    font-size: 15px;
+    line-height: 1.4;
+    letter-spacing: -1px;
+  }
+  .wf-active .latest-stories h3 {
+    font-family: "proxima-nova-condensed", sans-serif;
+    font-size: 16px;
+  }
+  .wf-loading .latest-stories article h2 {
+    font-family: "Trebuchet MS";
+    font-size: 25px;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    padding-bottom: 4px;
+  }
+  .wf-active .latest-stories article h2 {
+    font-family: "proxima-nova-condensed", sans-serif;
+    font-size: 28px;
+    line-height: 1.2;
+  }
+    @media (max-width: 767px) {
+    .wf-loading .latest-stories h3 {
+      font-family: "Trebuchet MS";
+      font-size: 15px;
+    }
+    .wf-active .latest-stories h3 {
+      font-family: "proxima-nova-condensed", sans-serif;
+      font-size: 16px;
+    }
+    .wf-loading .latest-stories article h2 {
+      font-family: "Trebuchet MS";
+      font-size: 20px;
+    }
+    .wf-active .latest-stories article h2 {
+      font-family: "proxima-nova-condensed", sans-serif;
+      font-size: 24px;
+    }
+  }
+{% elsif page.layout == "story" %}
+  .wf-loading .header .top-header .list li a {
+    font-family: "Trebuchet MS";
+    font-size: 11px;
+    letter-spacing: 0.8px;
+  }
+  .wf-active .header .top-header .list li a {
+    font-family: "proxima-nova-condensed", sans-serif;
+    font-size: 12px;
+  }
+  .wf-loading .story h1 {
+    font-family: "Trebuchet MS";
+    font-size: 32px;
+    line-height: 1.36;
+    letter-spacing: -1px;
+    padding-bottom: 4px;
+  }
+  .wf-active .story h1 {
+    font-family: "proxima-nova-condensed", sans-serif;
+    font-size: 36px;
+    line-height: 1.32;
+  }
+  .wf-loading footer .author {
+    font-family: "Trebuchet MS";
+    font-size: 16px;
+    letter-spacing: -1px;
+    line-height: 1.4;
+  }
+  .wf-active footer .author {
+    font-family: "proxima-nova-condensed", sans-serif;
+    font-size: 18px;
+  }
+  .wf-loading .story .description {
+    font-family: "Trebuchet MS";
+    font-size: 23px;
+    letter-spacing: -1px;
+    line-height: 1.48;
+  }
+  .wf-active .story .description {
+    font-family: "proxima-nova-condensed", sans-serif;
+    font-size: 26px;
+  }
+  @media (max-width: 767px) {
+    .wf-loading .story h1 {
+      font-family: "Trebuchet MS";
+      font-size: 26px;
+      line-height: 1.14;
+      margin-top: 20px;
+      margin-bottom: 5px;
+      color: rgba(0, 0, 0, 0.8);
+    }
+    .wf-active .story h1 {
+      font-family: "proxima-nova-condensed", sans-serif;
+      font-size: 28px;
+      line-height: 1.1;
+      margin-top: 20px;
+      margin-bottom: 5px;
+      color: rgba(0, 0, 0, 0.8);
+    }
+    .wf-loading footer .author {
+      font-family: "Trebuchet MS";
+      font-size: 12px;
+      letter-spacing: -1px;
+      color: #666666;
+    }
+    .wf-active footer .author {
+      font-family: "proxima-nova-condensed", sans-serif;
+      font-size: 13px;
+      color: #666666;
+    }
+    .wf-loading .story .description {
+      font-family: "proxima-nova-condensed", sans-serif;
+      font-size: 18px;
+      letter-spacing: -0.5px;
+      margin-top: 9px;
+      margin-bottom: 16px;
+    }
+    .wf-active .story .description, .wf-active .story .description p {
+      font-family: "proxima-nova-condensed", sans-serif;
+      font-size: 20px;
+      letter-spacing: -0.3px;
+      margin-top: 9px;
+      margin-bottom: 16px;
+    }
+  }
+{% endif %}

@@ -1,0 +1,49 @@
+{% comment %}
+<!--
+  Footer
+
+  This partial is included on every page except the observatory page to consistently
+  display the same footer on each page.
+
+-->
+{% endcomment %}
+
+{% assign footer = site.data.header-footer-content.footer %}
+
+<div class="footer text-center">
+
+  <div class="container center-block">
+    <div class="copyright inline-block"><i class="fa fa-copyright"></i> 2016 Eight Chakras</div>
+    <ul class="list-inline inline-block">
+      <li>
+          <a href="#">Terms</a>
+      </li>
+      <li>
+          <a href="#">Privacy</a>
+      </li>
+      <li>
+          <a href="#">About</a>
+      </li>
+      <li>
+          <a href="#">Press</a>
+      </li>
+      <li>
+          <a href="#">Jobs</a>
+      </li>
+      <li>
+          <a href="#">Feedback</a>
+      </li>
+      <li>
+          <a href="#">Site map</a>
+      </li>
+      <li>
+          <a href="#">Rss</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div id="background-overlay"></div>
+<script type="text/javascript" src="{{ site.baseurl }}/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}/js/lazysizes.min.js" async=""></script>
+<script type="text/javascript" src="{{ site.baseurl }}/js/main.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}/jssocials-1.2.1/dist/jssocials.min.js"></script>

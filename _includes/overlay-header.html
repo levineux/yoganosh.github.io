@@ -1,0 +1,61 @@
+{% comment %}
+<!--
+  Header
+
+  This partial is included on every page except to consistently
+  display the same header on each page.
+
+-->
+{% endcomment %}
+
+{% assign header = site.data.header-footer-content.header %}
+
+<div id="overlay-menu">
+  <h3 class="h3"><a href="/" class="logo"><img src="{{ site.baseurl }}/images/logo.svg" alt="Eight Chakras"></a><span id="close-sidebar" class="pull-right">×</span></h3>
+  <ul class="list categories">
+    <li>
+        <a href="category.html">Yoga for <span class="turquoise">Wellness</span></a>
+    </li>
+    <li>
+        <a href="category.html">Yoga for <span class="orange">Body</span></a>
+    </li>
+    <li>
+        <a href="category.html">Yoga for <span class="green">Lifestyle</span></a>
+    </li>
+    <li>
+        <a href="category.html">Yoga for <span class="pink">Love</span></a>
+    </li>
+    <li>
+        <a href="category.html">Yoga for <span class="purple">Mind</span></a>
+    </li>
+    <li>
+        <a href="category.html">Yoga for <span class="blue">Travel</span></a>
+    </li>
+  </ul>
+  <ul class="list">
+    <li>
+        <a href="#">Terms</a>
+    </li>
+    <li>
+        <a href="#">Privacy</a>
+    </li>
+    <li>
+        <a href="#">About</a>
+    </li>
+    <li>
+        <a href="#">Press</a>
+    </li>
+    <li>
+        <a href="#">Jobs</a>
+    </li>
+    <li>
+        <a href="#">Feedback</a>
+    </li>
+    <li>
+        <a href="#">Site map</a>
+    </li>
+    <li>
+        <a href="#">Rss</a>
+    </li>
+  </ul>
+</div>
