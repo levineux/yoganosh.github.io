@@ -108,7 +108,11 @@ $(document).ready(function(){
       if(x == postsSize) {
         $('#loadMore').hide();
       } else {
-        pageNum += 1;
+        if (pageNum == "") {
+          pageNum = 2;
+        } else {
+          pageNum += 1;
+        }
         this.setAttribute('href', "#" + pageNum);
       }
     });
