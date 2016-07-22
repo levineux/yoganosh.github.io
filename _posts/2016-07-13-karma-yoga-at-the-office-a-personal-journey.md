@@ -11,11 +11,11 @@ tags:
 - Yoga
 - Education
 recommended-stories:
-- What Kind of Yoga is Right for You?
-- Yoga and Stress: An Introduction
-- Is Yoga Nidra Your Key to a Good Night’s Sleep?
-- Chronic Pain? Meditate On That
-- Top 7 Books for Your Yoga Travels
+- /story/what-kind-of-yoga-is-right-for-you/
+- /story/yoga-and-stress-an-introduction/
+- /story/is-yoga-nidra-your-key-to-a-good-nights-sleep/
+- /story/chronic-pain-meditate-on-that/
+- /story/top-7-books-for-your-yoga-travels/
 ---
 
 You’ve heard all about the benefits of practicing yoga. But with so many styles and opinions, it’s easy to feel overwhelemed. It’s time to get the facts straight and those opinions checked.

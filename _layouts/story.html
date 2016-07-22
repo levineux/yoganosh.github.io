@@ -6,190 +6,139 @@ layout: default
 
 <div class="main container">
   <article class="story">
-  <div class="row">
-  <div class="col-md-8 col-sm-10 col-xs-12 col-sm-offset-1 col-md-offset-2 ">
+    <div class="row">
+      <div class="col-md-8 col-sm-10 col-xs-12 col-sm-offset-1 col-md-offset-2 ">
 
-    <h1>{{ page.title }}</h1>
+        <h1>{{ page.title }}</h1>
 
-    <footer>
-      <span class="author">By {{ page.author }}</span>
-      <time datetime="{{ page.date }}" class="date">1 day ago</time>
-    </footer>
+        <footer>
+          <span class="author">By {{ page.author }}</span>
+          <time datetime="{{ page.date }}" class="date">1 day ago</time>
+        </footer>
 
-    <div class="description">
-      {% if page.content contains '<!--more-->' %}
-        {{ page.content | split:'<!--more-->' | first }}
-      {% else %}
-        {{ page.excerpt }}
-      {% endif %}
-    </div>
+        <div class="description">
+          {% if page.content contains '<!--more-->' %}
+            {{ page.content | split:'<!--more-->' | first }}
+          {% else %}
+            {{ page.excerpt }}
+          {% endif %}
+        </div>
 
-    <div class="js-share-story"></div>
-    {% if page.image-fullpage %}
-      {% assign img = page.image-fullpage %}
-    {% else %}
-      {% assign img = page.image %}
-    {% endif %}
-    <img src="{{ site.baseurl }}/images/placeholder-thumb.png" data-src="{{ site.baseurl }}/images/{{ img }}" class="lazyload block featured-image" alt="{{ page.image-title }}">
+        <div class="js-share-story"></div>
+        {% if page.image-fullpage %}
+          {% assign img = page.image-fullpage %}
+        {% else %}
+          {% assign img = page.image %}
+        {% endif %}
+        <img src="{{ site.baseurl }}/images/placeholder-thumb.png" data-src="{{ site.baseurl }}/images/{{ img }}" class="lazyload block featured-image" alt="{{ page.image-title }}">
 
-    <!-- post content -->
-    {% if page.content contains '<!--more-->' %}
-      {{ page.content | split:'<!--more-->' | last }}
-    {% else %}
-      {{ page.excerpt }}
-    {% endif %}
+        <!-- post content -->
+        {% if page.content contains '<!--more-->' %}
+          {{ page.content | split:'<!--more-->' | last }}
+        {% else %}
+          {{ page.excerpt }}
+        {% endif %}
 
-    <!-- post tags -->
-    <div class="tags">
-      {% for tag in page.tags %}
-        <a href="#">{{ tag }}</a>
-      {% endfor %}
-    </div>
+        <!-- post tags -->
+        <div class="tags">
+          {% for tag in page.tags %}
+            <a href="#">{{ tag }}</a>
+          {% endfor %}
+        </div>
 
-    <!-- post author -->
-    {% for author in site.data.story-authors.authors %}
-      {% if page.author == author.name %}
-      <div class="story-author">
-          <div class="author pull-left hidden-xs">
-              <img src="{{ site.baseurl }}/images/{{ author.pic }}" width="60px" heigh="60px">
+        <!-- post author -->
+        {% for author in site.data.story-authors.authors %}
+          {% if page.author == author.name %}
+          <div class="story-author">
+              <div class="author pull-left hidden-xs">
+                  <img src="{{ site.baseurl }}/images/{{ author.pic }}" width="60px" heigh="60px">
+              </div>
+              <div class="comment-content">
+                  <h4 class="h4">{{ page.author }}</h4>
+                  <p>{{ author.bio }}</p>
+              </div>
           </div>
-          <div class="comment-content">
-              <h4 class="h4">{{ page.author }}</h4>
-              <p>{{ author.bio }}</p>
-          </div>
+          {% endif %}
+        {% endfor %}
+
+        <div class="send-comment">
+          <div id="disqus_thread"></div>
+          <script>
+          /**
+          * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+          * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+          */
+          /*
+          var disqus_config = function () {
+          this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+          this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+          };
+          */
+          (function() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script');
+
+          s.src = '//eightchakras.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+          })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+        </div>
       </div>
-      {% endif %}
+    </div>
+  </article>
+
+  {% if page.recommended-stories %}
+  <section class="latest-stories">
+    <h3>Recommended For You</h3>
+
+    {% for rs in page.recommended-stories %}
+      {% for post in site.posts %}
+        {% assign post_url = post.url %}
+        {% if post_url == rs %}
+
+      <article>
+        <div class="row">
+          <div class="col-sm-4 col-xs-12">
+            <figure><a href="story.html"><img src="{{ site.baseurl }}/images/{{ post.image }}" data-src="{{ site.baseurl }}/images/{{ post.image }}" class="lazyload block" alt="{{ post.image-title }}"></a></figure>
+          </div>
+          <div class="col-sm-5 col-xs-12">
+
+            {% assign pages = site.pages | sort:"weight" %}
+
+            {% for p in pages %}
+              {% assign cat_title = p.title | downcase %}
+              {% if post.categories[0] == cat_title %}
+
+                <a class="tag {{ p.color }}"  href="{{ p.url | prepend: site.baseurl }}">
+                  {{ p.title | capitalize }}
+                </a>
+
+              {% endif %}
+            {% endfor %}
+
+            <div class="date"><time datetime="{{ post.date }}">{{ post.date }}</time></div>
+            <div class="clearfix"></div>
+            <header>
+              <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+            </header>
+            <p>
+            {% if post.content contains '<!--more-->' %}
+              {{ post.content | split:'<!--more-->' | first }}
+            {% else %}
+              {{ post.excerpt }}
+            {% endif %}
+            </p>
+            <div class="author hidden-xs">by <a href="#">{{ post.author }}</a></div>
+          </div>
+        </div>
+      </article>
+
+        {% endif %}
+      {% endfor %}
     {% endfor %}
 
-    <div class="send-comment">
-      <div id="disqus_thread"></div>
-        <script>
-        /**
-        * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-        * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-        */
-        /*
-        var disqus_config = function () {
-        this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
-        */
-        (function() { // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-
-        s.src = '//eightchakras.disqus.com/embed.js';
-
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-        })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-      </div>
-    </div>
-  </div>
-</article>
-
-<section class="latest-stories">
-        <h3>Recommended For You</h3>
-        <article>
-            <div class="row">
-                <div class="col-sm-4 col-xs-12">
-                    <figure><a href="story.html"><img src="{{ site.baseurl }}/images/placeholder-thumb.png" data-src="{{ site.baseurl }}/images/image1.jpg" class="lazyload block" alt="Post Title"></a></figure>
-                </div>
-                <div class="col-sm-5 col-xs-12">
-                    <a class="tag orange" href="category.html">Body</a>
-                    <div class="date"><time datetime="2015-05-17 19:00">1 day ago</time></div>
-                    <!-- <a href="#" class="share js-show-share btn hidden-xs"><i class="fa fa-share"></i>Share</a> -->
-                    <!-- <div class="js-share"></div> -->
-                    <!-- <a href="#" class="hide-share js-hide-share btn"></a> -->
-                    <div class="clearfix"></div>
-                    <header>
-                        <h2><a href="story.html">What Kind of Yoga is Right for You?</a></h2>
-                    </header>
-                    <p>You've heard all about the benefits of practising yoga. But with  so many styles and opinions, it's easy to feel overwhelemed.</p>
-                    <div class="author hidden-xs">by <a href="#">Eight Chakrass Staff</a></div>
-                </div>
-            </div>
-        </article>
-        <article>
-            <div class="row">
-                <div class="col-sm-4 col-xs-12">
-                    <figure><a href="story.html"><img src="{{ site.baseurl }}/images/placeholder-thumb.png" data-src="{{ site.baseurl }}/images/image2.jpg" class="lazyload block" alt="Post Title"></a></figure>
-                </div>
-                <div class="col-sm-5 col-xs-12">
-                    <a class="tag turquoise" href="category.html">Wellness</a>
-                    <div class="date"><time datetime="2015-05-17 19:00">1 day ago</time></div>
-                    <!-- <a href="#" class="share js-show-share btn hidden-xs"><i class="fa fa-share"></i>Share</a> -->
-                    <!-- <div class="js-share"></div> -->
-                    <!-- <a href="#" class="hide-share js-hide-share btn"></a> -->
-                    <div class="clearfix"></div>
-                    <header>
-                        <h2><a href="story.html">Yoga and Stress: An Introduction</a></h2>
-                    </header>
-                    <p>You've heard all about the benefits of practising yoga. But with  so many styles and opinions, it's easy to feel overwhelemed.</p>
-                    <div class="author hidden-xs">by <a href="#">Eight Chakrass Staff</a></div>
-                </div>
-            </div>
-        </article>
-        <article>
-            <div class="row">
-                <div class="col-sm-4 col-xs-12">
-                    <figure><a href="story.html"><img src="{{ site.baseurl }}/images/placeholder-thumb.png" data-src="{{ site.baseurl }}/images/image3.jpg" class="lazyload block" alt="Post Title"></a></figure>
-                </div>
-                <div class="col-sm-5 col-xs-12">
-                    <a class="tag turquoise" href="category.html">Wellness</a>
-                    <div class="date"><time datetime="2015-05-17 19:00">1 day ago</time></div>
-                    <!-- <a href="#" class="share js-show-share btn hidden-xs"><i class="fa fa-share"></i>Share</a> -->
-                    <!-- <div class="js-share"></div> -->
-                    <!-- <a href="#" class="hide-share js-hide-share btn"></a> -->
-                    <div class="clearfix"></div>
-                    <header>
-                        <h2><a href="story.html">Is Yoga Nidra Your Key to a Good Night’s Sleep?</a></h2>
-                    </header>
-                    <p>You've heard all about the benefits of practising yoga. But with  so many styles and opinions, it's easy to feel overwhelemed.</p>
-                    <div class="author hidden-xs">by <a href="#">Eight Chakrass Staff</a></div>
-                </div>
-            </div>
-        </article>
-        <article>
-            <div class="row">
-                <div class="col-sm-4 col-xs-12">
-                    <figure><a href="story.html"><img src="{{ site.baseurl }}/images/placeholder-thumb.png" data-src="{{ site.baseurl }}/images/image4.jpg" class="lazyload block" alt="Post Title"></a></figure>
-                </div>
-                <div class="col-sm-5 col-xs-12">
-                    <a class="tag turquoise" href="category.html">Wellness</a>
-                    <div class="date"><time datetime="2015-05-17 19:00">1 day ago</time></div>
-                    <!-- <a href="#" class="share js-show-share btn hidden-xs"><i class="fa fa-share"></i>Share</a> -->
-                    <!-- <div class="js-share"></div> -->
-                    <!-- <a href="#" class="hide-share js-hide-share btn"></a> -->
-                    <div class="clearfix"></div>
-                    <header>
-                        <h2><a href="story.html">Chronic Pain? Meditate On That</a></h2>
-                    </header>
-                    <p>You've heard all about the benefits of practising yoga. But with  so many styles and opinions, it's easy to feel overwhelemed.</p>
-                    <div class="author hidden-xs">by <a href="#">Eight Chakrass Staff</a></div>
-                </div>
-            </div>
-        </article>
-        <article>
-            <div class="row">
-                <div class="col-sm-4 col-xs-12">
-                    <figure><a href="story.html"><img src="{{ site.baseurl }}/images/placeholder-thumb.png" data-src="{{ site.baseurl }}/images/image5.jpg" class="lazyload block" alt="Post Title"></a></figure>
-                </div>
-                <div class="col-sm-5 col-xs-12">
-                    <a class="tag blue" href="category.html">Travel</a>
-                    <div class="date"><time datetime="2015-05-17 19:00">1 day ago</time></div>
-                    <!-- <a href="#" class="share js-show-share btn hidden-xs"><i class="fa fa-share"></i>Share</a> -->
-                    <!-- <div class="js-share"></div> -->
-                    <!-- <a href="#" class="hide-share js-hide-share btn"></a> -->
-                    <div class="clearfix"></div>
-                    <header>
-                        <h2><a href="story.html">Top 7 Books for Your Yoga Travels</a></h2>
-                    </header>
-                    <p>You've heard all about the benefits of practising yoga. But with  so many styles and opinions, it's easy to feel overwhelemed.</p>
-                    <div class="author hidden-xs">by <a href="#">Eight Chakrass Staff</a></div>
-                </div>
-            </div>
-        </article>
-    </section>
-  </div>
+  </section>
+  {% endif %}
+</div>
