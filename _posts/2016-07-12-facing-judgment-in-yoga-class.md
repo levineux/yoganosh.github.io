@@ -1,11 +1,10 @@
 ---
 layout: story
-title: "What Kind of Yoga is Right for You?"
+title: "Facing Judgment in Yoga Class"
 author: "Eight Chakras Staff"
 categories:
-- body
-image: "image1.jpg"
-image-fullpage: "article-photo.jpg"
+- lifestyle
+image: "image7.jpg"
 image-title: "Post Title"
 tags:
 - Teaching

@@ -594,7 +594,7 @@ ul {
 .banner .search {
   display: inline-block;
 }
-.banner .search input[type="email"] {
+.banner .search input[type="email"], .banner .search input[type="text"] {
   float: left;
   font-family: "proxima-nova-condensed", sans-serif;
   font-weight: 600;
@@ -605,6 +605,9 @@ ul {
   border: none;
   padding: 9px 18px;
   width: 284px;
+}
+.hidden {
+  display: none;
 }
 @media (max-width: 767px) {
   .banner .search input[type="email"] {

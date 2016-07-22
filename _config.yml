@@ -17,12 +17,16 @@ exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
+  - less
 
 # Markdown settings
 markdown: kramdown
 kramdown:
   auto_ids:       true
   auto_id_stripping:    true
+
+gems:
+  - jekyll-feed
 
 # HTML Compression settings
 #compress_html:

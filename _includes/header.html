@@ -8,9 +8,7 @@
 -->
 {% endcomment %}
 
-{% assign header = site.data.header-footer-content.header %}
-
-{% if page.layout == "homepage" %}
+{% if page.layout == "homepage" or page.layout == "page" or page.layout == "category"  or page.layout == "search" %}
 <header class="hidden-xs">
   <div class="site-header__header one-header">
     <div class="header text-center minimized js-header-scroll-hide">
@@ -23,7 +21,7 @@
             <!-- <span class="hidden-xs">CONTRIBUTE</span> -->
             <span class="search js-search"><svg class="search-svg" width="25" height="25" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z"></path></svg></span>
             <div class="toggle-search js-toggle-search">
-                <form>
+                <form action="/search.html" method="get">
                     <input type="text" class="textInput" name="s" placeholder="Search Eight Chakras">
                 </form>
                 <span class="close js-search-close">×</span>
@@ -31,27 +29,22 @@
             <a href="#" class="bar js-bar pull-right"><span class="menu-icon"><span></span><span></span><span></span></span></a>
           </div>
           <ul class="list list-inline">
-            <li class="active">
-                <a href="/">Home</a>
+            <li{% if page.url == "/" %} class="active"{% endif %}>
+                <a href="{{ site.baseurl }}/">Home</a>
             </li>
-            <li>
-                <a href="category.html">Wellness</a>
-            </li>
-            <li>
-                <a href="category.html">Body</a>
-            </li>
-            <li>
-                <a href="category.html">Lifestyle</a>
-            </li>
-            <li>
-                <a href="category.html">Love</a>
-            </li>
-            <li>
-                <a href="category.html">Mind</a>
-            </li>
-            <li>
-                <a href="category.html">Travel</a>
-            </li>
+
+            {% comment %}<!--Get Categories for Header-->{% endcomment %}
+
+            {% assign pages = site.pages | sort:"weight"  %}
+
+            {% for p in pages %}
+              {% if p.menu-item %}
+                <li {% if page.url == p.url %}class="active"{% endif %} >
+                  <a href="{{ p.url | prepend: site.baseurl }}">{{ p.title | capitalize }}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
+
           </ul>
 
           <div class="clearfix"></div>
@@ -74,35 +67,28 @@
             <!-- <span class="hidden-xs">CONTRIBUTE</span> -->
             <span class="search js-search"><svg class="search-svg" width="25" height="25" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z"></path></svg></span>
             <div class="toggle-search js-toggle-search">
-              <form>
-                <input type="text" class="textInput" name="s" placeholder="Search Eight Chakras">
+              <form action="/search" method="get">
+                <input type="text" class="textInput" name="s" id="search-box" placeholder="Search Eight Chakras">
               </form>
               <span class="close js-search-close">×</span>
             </div>
             <a href="#" class="bar js-bar pull-right"><span class="menu-icon"><span></span><span></span><span></span></span></a>
           </div>
           <ul class="list list-inline">
-            <li class="active">
+            <li {% if page.url == "/" %} class="active"{% endif %}>
               <a href="/">Home</a>
             </li>
-            <li>
-              <a href="category.html">Wellness</a>
-            </li>
-            <li>
-              <a href="category.html">Body</a>
-            </li>
-            <li>
-              <a href="category.html">Lifestyle</a>
-            </li>
-            <li>
-              <a href="category.html">Love</a>
-            </li>
-            <li>
-              <a href="category.html">Mind</a>
-            </li>
-            <li>
-              <a href="category.html">Travel</a>
-            </li>
+            {% comment %}<!--Get Categories for Header-->{% endcomment %}
+
+            {% assign pages = site.pages | sort:"weight"  %}
+
+            {% for p in pages %}
+              {% if p.menu-item %}
+                <li {% if page.url == p.url %}class="active"{% endif %} >
+                  <a href="{{ p.url | prepend: site.baseurl }}">{{ p.title | capitalize }}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
           </ul>
 
           <div class="clearfix"></div>

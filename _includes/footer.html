@@ -8,36 +8,26 @@
 -->
 {% endcomment %}
 
-{% assign footer = site.data.header-footer-content.footer %}
-
 <div class="footer text-center">
 
   <div class="container center-block">
     <div class="copyright inline-block"><i class="fa fa-copyright"></i> 2016 Eight Chakras</div>
     <ul class="list-inline inline-block">
+
+      {% comment %}<!--Get Footer Nav Items-->{% endcomment %}
+
+      {% assign pages = site.pages | sort:"footer-order"  %}
+
+      {% for p in pages %}
+        {% if p.footer-menu %}
+          <li {% if page.url == p.url %}class="active"{% endif %} >
+            <a href="{{ p.url | prepend: site.baseurl }}">{{ p.path | replace: '-', ' ' | replace: '.md', '' | replace: '_pages/', '' }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+
       <li>
-          <a href="#">Terms</a>
-      </li>
-      <li>
-          <a href="#">Privacy</a>
-      </li>
-      <li>
-          <a href="#">About</a>
-      </li>
-      <li>
-          <a href="#">Press</a>
-      </li>
-      <li>
-          <a href="#">Jobs</a>
-      </li>
-      <li>
-          <a href="#">Feedback</a>
-      </li>
-      <li>
-          <a href="#">Site map</a>
-      </li>
-      <li>
-          <a href="#">Rss</a>
+          <a href="{{ site.baseurl }}/feed.xml">Rss</a>
       </li>
     </ul>
   </div>
@@ -46,4 +36,5 @@
 <script type="text/javascript" src="{{ site.baseurl }}/js/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="{{ site.baseurl }}/js/lazysizes.min.js" async=""></script>
 <script type="text/javascript" src="{{ site.baseurl }}/js/main.js"></script>
-<script type="text/javascript" src="{{ site.baseurl }}/jssocials-1.2.1/dist/jssocials.min.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}/jssocials-1.2.1/lib/jssocials.min.js"></script>
+<!-- <script type="text/javascript" src="{{ site.baseurl }}/js/history.js"></script> -->

@@ -30,6 +30,8 @@
       {% capture og_value %}{{ page.title }}{% endcapture %}
       {% if page.layout == "blog" %}
         {% capture og_value %}{{ og_value }} - {{ site.title }}{% endcapture %}
+      {% else %}
+        {% assign og_value = og[1] %}
       {% endif %}
     {% else %}
       {% assign og_value = og[1] %}
@@ -40,14 +42,17 @@
     <meta property="og:description" content="{{ page.description }}" />
   {% endif %}
 
+  <!-- Atom RSS Feed -->
+  {% feed_meta %}
+
   <link rel="canonical" href="{{ site.site_url }}{{ page.url }}" />
   <meta charset="UTF-8">
   <script src="https://use.typekit.net/uul1tfe.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
   <link rel="stylesheet" href="{{ site.baseurl }}/css/normalize.css"/>
   <link rel="stylesheet" href="{{ site.baseurl }}/flexboxgrid-6.3.0/css/flexboxgrid.min.css"/>
-  <link rel="stylesheet" href="{{ site.baseurl }}/jssocials-1.2.1/dist/jssocials.css"/>
-  <link rel="stylesheet" href="{{ site.baseurl }}/jssocials-1.2.1/dist/jssocials-theme-flat.css"/>
+  <link rel="stylesheet" href="{{ site.baseurl }}/jssocials-1.2.1/lib/jssocials.css"/>
+  <link rel="stylesheet" href="{{ site.baseurl }}/jssocials-1.2.1/lib/jssocials-theme-flat.css"/>
   <link rel="stylesheet" href="{{ site.baseurl }}/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css"/>
   <link rel="apple-touch-icon" sizes="57x57" href="{{ site.baseurl }}/apple-touch-icon-57x57.png">

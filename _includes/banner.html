@@ -1,0 +1,56 @@
+{% comment %}
+<!--
+  banner
+
+  This partial can be included on page's and layouts that require a banner.
+  @param - string - background image
+
+-->
+{% endcomment %}
+
+<div id="banner-container" class="center-block">
+  <div class="banner text-center">
+    <img src="{{ site.baseurl }}/images/subscribe-bg.jpg" style="display: none;" alt="Get Better. Get Yoga.">
+
+    {% if include.subscribe %}
+    <div class="search-container">
+      <h1>Get Better. Get Yoga.</h1>
+      <h2>The shortest route between you and your health.</h2>
+      <div class="search">
+        <!-- Begin MailChimp Signup Form -->
+        <div id="mc_embed_signup">
+          <form action="thank-you" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" id="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate netlify netlify-honeypot="bot-field">
+            <div id="mc_embed_signup_scroll">
+
+            <div class="mc-field-group">
+                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Your email">
+                <input type="submit" value="Go" name="subscribe" id="mc-embedded-subscribe" class="btn button">
+            </div>
+            <p class="hidden"><label>Bot field: <input name="bot-field"></label></p>
+            <div id="mce-responses" class="clear">
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none"></div>
+            </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_7ecd5ae262585980c164b9ff3_e01e370105" tabindex="-1" value=""></div>
+            <div class="clear"></div>
+            </div>
+          </form>
+        </div>
+
+        <!--End mc_embed_signup-->
+      </div>
+    </div>
+    {% elsif include.search %}
+    <div class="search-container">
+      <h1>Get Searching</h1>
+      <div class="search">
+        <form action="/search.html" method="get">
+        <input type="text" name="s" class="required email" placeholder="Search Eight Chakras">
+        <input type="submit" value="Go" id="mc-embedded-subscribe" class="btn button">
+        </form>
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
+</div>

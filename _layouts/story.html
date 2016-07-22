@@ -25,7 +25,12 @@ layout: default
     </div>
 
     <div class="js-share-story"></div>
-    <img src="{{ site.baseurl }}/images/placeholder-thumb.png" data-src="{{ site.baseurl }}/images/{{ page.image }}" class="lazyload block featured-image" alt="{{ page.image-title }}">
+    {% if page.image-fullpage %}
+      {% assign img = page.image-fullpage %}
+    {% else %}
+      {% assign img = page.image %}
+    {% endif %}
+    <img src="{{ site.baseurl }}/images/placeholder-thumb.png" data-src="{{ site.baseurl }}/images/{{ img }}" class="lazyload block featured-image" alt="{{ page.image-title }}">
 
     <!-- post content -->
     {% if page.content contains '<!--more-->' %}

@@ -8,54 +8,38 @@
 -->
 {% endcomment %}
 
-{% assign header = site.data.header-footer-content.header %}
-
 <div id="overlay-menu">
   <h3 class="h3"><a href="/" class="logo"><img src="{{ site.baseurl }}/images/logo.svg" alt="Eight Chakras"></a><span id="close-sidebar" class="pull-right">×</span></h3>
   <ul class="list categories">
-    <li>
-        <a href="category.html">Yoga for <span class="turquoise">Wellness</span></a>
-    </li>
-    <li>
-        <a href="category.html">Yoga for <span class="orange">Body</span></a>
-    </li>
-    <li>
-        <a href="category.html">Yoga for <span class="green">Lifestyle</span></a>
-    </li>
-    <li>
-        <a href="category.html">Yoga for <span class="pink">Love</span></a>
-    </li>
-    <li>
-        <a href="category.html">Yoga for <span class="purple">Mind</span></a>
-    </li>
-    <li>
-        <a href="category.html">Yoga for <span class="blue">Travel</span></a>
-    </li>
+
+  {% comment %}<!--Get Categories for Header-->{% endcomment %}
+
+  {% assign pages = site.pages | sort:"weight"  %}
+
+  {% for p in pages %}
+    {% if p.menu-item %}
+    {% capture cat_url %}/story/category/{{ cat[0] | replace: ' ', '-' }}/{% endcapture %}
+      <li {% if page.url == p.url %}class="active"{% endif %} ><a href="{{ p.url | prepend: site.baseurl }}">
+      Yoga for <span class="{{ p.color }}">{{ p.title | capitalize }}</span>
+      </a></li>
+    {% endif %}
+  {% endfor %}
+
   </ul>
   <ul class="list">
+  {% comment %}<!--Get Footer Nav Items-->{% endcomment %}
+
+  {% assign pages = site.pages | sort:"footer-order"  %}
+
+  {% for p in pages %}
+    {% if p.footer-menu %}
+      <li {% if page.url == p.url %}class="active"{% endif %} >
+        <a href="{{ p.url | prepend: site.baseurl }}">{{ p.path | replace: '-', ' ' | replace: '.md', '' | replace: '_pages/', '' }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
     <li>
-        <a href="#">Terms</a>
-    </li>
-    <li>
-        <a href="#">Privacy</a>
-    </li>
-    <li>
-        <a href="#">About</a>
-    </li>
-    <li>
-        <a href="#">Press</a>
-    </li>
-    <li>
-        <a href="#">Jobs</a>
-    </li>
-    <li>
-        <a href="#">Feedback</a>
-    </li>
-    <li>
-        <a href="#">Site map</a>
-    </li>
-    <li>
-        <a href="#">Rss</a>
+      <a href="{{ site.baseurl }}/feed.xml">Rss</a>
     </li>
   </ul>
 </div>

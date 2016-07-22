@@ -1,11 +1,10 @@
 ---
 layout: story
-title: "What Kind of Yoga is Right for You?"
+title: "Top 7 Books for Your Yoga Travels"
 author: "Eight Chakras Staff"
 categories:
-- body
-image: "image1.jpg"
-image-fullpage: "article-photo.jpg"
+- travel
+image: "image5.jpg"
 image-title: "Post Title"
 tags:
 - Teaching

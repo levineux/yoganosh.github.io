@@ -1,11 +1,10 @@
 ---
 layout: story
-title: "What Kind of Yoga is Right for You?"
+title: "Is Yoga Nidra Your Key to a Good Night’s Sleep?"
 author: "Eight Chakras Staff"
 categories:
-- body
-image: "image1.jpg"
-image-fullpage: "article-photo.jpg"
+- wellness
+image: "image3.jpg"
 image-title: "Post Title"
 tags:
 - Teaching

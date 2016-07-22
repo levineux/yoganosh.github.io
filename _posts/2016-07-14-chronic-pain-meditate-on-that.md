@@ -1,11 +1,10 @@
 ---
 layout: story
-title: "What Kind of Yoga is Right for You?"
+title: "Chronic Pain? Meditate On That"
 author: "Eight Chakras Staff"
 categories:
-- body
-image: "image1.jpg"
-image-fullpage: "article-photo.jpg"
+- wellness
+image: "image4.jpg"
 image-title: "Post Title"
 tags:
 - Teaching

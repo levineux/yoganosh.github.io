@@ -86,7 +86,7 @@ $(document).ready(function(){
     $('time').each(function( index, element ) {
         var date1 = new Date();
         var date2 = new Date($(element).attr('datetime'));
-        var timeDiff = date2.getTime() - date1.getTime();
+        var timeDiff = date1.getTime() - date2.getTime();
         var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
         if (diffDays == 1) {
             $(element).text(diffDays + " day ago");
@@ -94,6 +94,34 @@ $(document).ready(function(){
             $(element).text(diffDays + " days ago");
         }
     });
+
+    postsSize = $(".content article").size();
+    var pageNum = window.location.hash.substr(1);
+    x=5;
+    if (pageNum > 0) x=x*pageNum;
+    $('.content article:lt('+x+')').show();
+    if (x >= postsSize) $('#loadMore').hide();
+    $('#loadMore').click(function (e) {
+      e.preventDefault;
+      x= (x+5 <= postsSize) ? x+5 : postsSize;
+      $('.content article:lt('+x+')').show();
+      if(x == postsSize) {
+        $('#loadMore').hide();
+      } else {
+        pageNum += 1;
+        this.setAttribute('href', "#" + pageNum);
+      }
+    });
+
+    $("#mc-embedded-subscribe-form").submit(function(e) {
+      e.preventDefault();
+
+      var $form = $(this);
+      $.post($form.attr("action"), $form.serialize()).then(function() {
+        alert("Thank you!");
+      });
+    });
+
 });
 $(window).resize(function(){
     if (window.innerWidth < 767){

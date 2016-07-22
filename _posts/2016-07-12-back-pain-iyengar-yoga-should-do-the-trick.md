@@ -1,11 +1,10 @@
 ---
 layout: story
-title: "What Kind of Yoga is Right for You?"
+title: "Back Pain? Iyengar Yoga Should Do the Trick"
 author: "Eight Chakras Staff"
 categories:
-- body
-image: "image1.jpg"
-image-fullpage: "article-photo.jpg"
+- love
+image: "image8.jpg"
 image-title: "Post Title"
 tags:
 - Teaching

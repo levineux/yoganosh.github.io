@@ -1,11 +1,10 @@
 ---
 layout: story
-title: "What Kind of Yoga is Right for You?"
+title: "Yoga and Stress: An Introduction"
 author: "Eight Chakras Staff"
 categories:
-- body
-image: "image1.jpg"
-image-fullpage: "article-photo.jpg"
+- wellness
+image: "image2.jpg"
 image-title: "Post Title"
 tags:
 - Teaching

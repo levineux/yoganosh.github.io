@@ -1,11 +1,10 @@
 ---
 layout: story
-title: "What Kind of Yoga is Right for You?"
+title: "Karma Yoga at the Office: A Personal Journey"
 author: "Eight Chakras Staff"
 categories:
-- body
-image: "image1.jpg"
-image-fullpage: "article-photo.jpg"
+- mind
+image: "image6.jpg"
 image-title: "Post Title"
 tags:
 - Teaching

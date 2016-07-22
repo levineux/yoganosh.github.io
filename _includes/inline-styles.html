@@ -10,7 +10,7 @@
 -->
 {% endcomment %}
 
-{% if page.layout == "homepage" %}
+{% if page.layout == "homepage" or page.layout == "search" %}
   .wf-loading .header .top-header .list li a {
     font-family: "Trebuchet MS";
     font-size: 11px;
@@ -49,7 +49,7 @@
     line-height: 1.4;
     font-weight: normal;
   }
-  .wf-active .banner .search input[type="email"] {
+  .wf-active .banner .search input[type="email"],  .wf-active .banner .search input[type="text"]{
     font-family: "proxima-nova-condensed", sans-serif;
     font-size: 16px;
   }
@@ -125,7 +125,7 @@
       font-size: 24px;
     }
   }
-{% elsif page.layout == "about" %}
+{% elsif page.layout == "page" %}
   .wf-loading .header .top-header .list li a {
     font-family: "Trebuchet MS";
     font-size: 11px;
