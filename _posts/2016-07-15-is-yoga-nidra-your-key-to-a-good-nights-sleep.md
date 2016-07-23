@@ -7,9 +7,9 @@ categories:
 image: "image3.jpg"
 image-title: "Post Title"
 tags:
-- Teaching
-- Yoga
-- Education
+- teaching
+- yoga
+- education
 ---
 
 You’ve heard all about the benefits of practicing yoga. But with so many styles and opinions, it’s easy to feel overwhelemed. It’s time to get the facts straight and those opinions checked.

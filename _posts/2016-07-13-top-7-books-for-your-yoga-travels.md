@@ -7,9 +7,9 @@ categories:
 image: "image5.jpg"
 image-title: "Post Title"
 tags:
-- Teaching
-- Yoga
-- Education
+- teaching
+- yoga
+- education
 recommended-stories:
 - /story/chronic-pain-meditate-on-that/
 ---

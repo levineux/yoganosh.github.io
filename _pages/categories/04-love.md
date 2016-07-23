@@ -7,7 +7,7 @@ description: "Read about Yoga for Love"
 weight: 4
 menu-item: true
 open-graph:
-  title:        "Yofa for Love"
+  title:        "Yoga for Love"
   image:        "subscribe-bg.jpg"
 ---
 

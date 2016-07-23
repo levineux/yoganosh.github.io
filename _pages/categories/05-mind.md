@@ -7,7 +7,7 @@ description: "Read about Yoga for Mind"
 weight: 5
 menu-item: true
 open-graph:
-  title:        "Yofa for Mind"
+  title:        "Yoga for Mind"
   image:        "subscribe-bg.jpg"
 ---
 

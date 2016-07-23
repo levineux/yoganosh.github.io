@@ -36,13 +36,13 @@ layout: default
         {% if page.content contains '<!--more-->' %}
           {{ page.content | split:'<!--more-->' | last }}
         {% else %}
-          {{ page.excerpt }}
+          {{ page.content }}
         {% endif %}
 
         <!-- post tags -->
         <div class="tags">
           {% for tag in page.tags %}
-            <a href="#">{{ tag }}</a>
+            <a href="{{ site.baseurl }}/{{ tag | replace: " ", "-" | downcase }}">{{ tag | capitalize }}</a>
           {% endfor %}
         </div>
 

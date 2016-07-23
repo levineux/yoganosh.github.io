@@ -7,16 +7,13 @@ categories:
 image: "image2.jpg"
 image-title: "Post Title"
 tags:
-- Teaching
-- Yoga
-- Education
+- teaching
+- yoga
+- education
 recommended-stories:
 - /story/back-pain-lyengar-yoga-should-do-the-trick/
+excerpt: "You’ve heard all about the benefits of practicing yoga. But with so many styles and opinions, it’s easy to feel overwhelemed. It’s time to get the facts straight and those opinions checked."
 ---
-
-You’ve heard all about the benefits of practicing yoga. But with so many styles and opinions, it’s easy to feel overwhelemed. It’s time to get the facts straight and those opinions checked.
-
-<!--more-->
 
 With yoga becoming increasingly popular in the U.S. and other Western countries, it is quite easy to get lost in the multitude of names, styles, and techniques being thrown around in magazines and on social media. Maybe one of your friends swears by Mysore Yoga, while another is certain that Kundalini Yoga is just the best thing that’s ever happened to her.
 

@@ -8,9 +8,9 @@ image: "image11.jpg"
 image-fullpage: "article-photo.jpg"
 image-title: "Post Title"
 tags:
-- Teaching
-- Yoga
-- Education
+- teaching
+- yoga
+- education
 recommended-stories:
 - /story/is-yoga-nidra-your-key-to-a-good-nights-sleep/
 - /story/top-7-books-for-your-yoga-travels/

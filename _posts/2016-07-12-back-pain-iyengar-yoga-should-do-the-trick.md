@@ -7,9 +7,9 @@ categories:
 image: "image8.jpg"
 image-title: "Post Title"
 tags:
-- Teaching
-- Yoga
-- Education
+- teaching
+- yoga
+- education
 recommended-stories:
 - /story/what-kind-of-yoga-is-right-for-you/
 - /story/yoga-and-stress-an-introduction/

@@ -7,7 +7,7 @@ description: "Read about Yoga for Lifestyle"
 weight: 3
 menu-item: true
 open-graph:
-  title:        "Yofa for Lifestyle"
+  title:        "Yoga for Lifestyle"
   image:        "subscribe-bg.jpg"
 ---
 

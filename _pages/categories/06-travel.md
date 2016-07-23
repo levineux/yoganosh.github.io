@@ -7,7 +7,7 @@ description: "Read about Yoga for Travel"
 weight: 6
 menu-item: true
 open-graph:
-  title:        "Yofa for Travel"
+  title:        "Yoga for Travel"
   image:        "subscribe-bg.jpg"
 ---
 

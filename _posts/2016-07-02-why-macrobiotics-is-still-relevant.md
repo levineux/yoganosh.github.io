@@ -8,9 +8,9 @@ image: "image14.jpg"
 image-fullpage: "article-photo.jpg"
 image-title: "Post Title"
 tags:
-- Teaching
-- Yoga
-- Education
+- teaching
+- yoga
+- education
 recommended-stories:
 - /story/top-7-books-for-your-yoga-travels/
 ---
