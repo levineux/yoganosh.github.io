@@ -41,6 +41,11 @@
   {% if page.open-graph.description == null %}
     <meta property="og:description" content="{{ page.description }}" />
   {% endif %}
+  {% if page.open-graph.image == null %}
+    {% if page.image %}
+      <meta property="og:image" content="{{ page.image }}" />
+    {% endif %}
+  {% endif %}
 
   <!-- Atom RSS Feed -->
   {% feed_meta %}

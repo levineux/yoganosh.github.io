@@ -11,53 +11,53 @@ layout: default
 {% endif %}
 
 <div class="main container">
-    <section class="latest-stories content">
-            <h3>Most Recent in <span class="{{ page.color }}">{{ page.title }}</span></h3>
+  <section class="latest-stories content">
+    <h3>Most Recent in <span class="{{ page.color }}">{{ page.title }}</span></h3>
 
-            {% for p in posts %}
-            <article style="display:none;">
-                <div class="row">
-                    <div class="col-sm-4 col-xs-12">
-                        <figure><a href="{{ p.url | prepend: site.baseurl }}"><img src="{{ site.baseurl }}/images/placeholder-thumb.png" data-src="{{ site.baseurl }}/images/{{ p.image }}/" class="lazyload block" alt="{{ p.image-title }}"></a></figure>
-                    </div>
-                    <div class="col-sm-5 col-xs-12">
-  {% if page.archive-type == "tag" %}
-        {% assign cats = site.pages | sort:"weight" %}
-
-        {% for c in cats %}
-          {% assign cat_title = c.title | downcase %}
-          {% if p.categories[0] == cat_title %}
-
-            <a class="tag {{ c.color }}"  href="{{ c.url | prepend: site.baseurl }}">
-              {{ cat_title | capitalize }}
-            </a>
-
-          {% endif %}
-        {% endfor %}
-{% else %}
-                        <a class="tag {{ page.color }}" href="{{ site.basurl }}/category/{{ p.categories[0] }}">{{ p.categories[0] }}</a>
-{% endif %}
-
-                        <div class="date"><time datetime="{{ p.date }}"></time></div>
-                        <div class="clearfix"></div>
-                        <header>
-                            <h2><a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a></h2>
-                        </header>
-                        <p>
-                        {% if p.content contains '<!--more-->' %}
-                          {{ p.content | split:'<!--more-->' | first }}
-                        {% else %}
-                          {{ p.excerpt }}
-                        {% endif %}
-                        </p>
-                        <div class="author hidden-xs">by <a href="#">{{ p.author }}</a></div>
-                    </div>
-                </div>
-            </article>
-            {% endfor %}
-
-        <div class="text-center">
-            <a href="#2" class="btn load" id="loadMore">Load More</a>
+    {% for p in posts %}
+    <article style="display:none;">
+      <div class="row">
+        <div class="col-sm-4 col-xs-12">
+          <figure><a href="{{ p.url | prepend: site.baseurl }}"><img src="{{ site.baseurl }}/images/placeholder-thumb.png" data-src="{{ site.baseurl }}/images/{{ p.image }}/" class="lazyload block" alt="{{ p.image-title }}"></a></figure>
         </div>
-    </section>
+        <div class="col-sm-5 col-xs-12">
+        {% if page.archive-type == "tag" %}
+          {% assign cats = site.pages | sort:"weight" %}
+
+          {% for c in cats %}
+            {% assign cat_title = c.title | downcase %}
+            {% if p.categories[0] == cat_title %}
+
+              <a class="tag {{ c.color }}"  href="{{ c.url | prepend: site.baseurl }}">
+                {{ cat_title | capitalize }}
+              </a>
+
+            {% endif %}
+          {% endfor %}
+        {% else %}
+          <a class="tag {{ page.color }}" href="{{ site.basurl }}/category/{{ p.categories[0] }}">{{ p.categories[0] }}</a>
+        {% endif %}
+
+          <div class="date"><time datetime="{{ p.date }}"></time></div>
+          <div class="clearfix"></div>
+          <header>
+              <h2><a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a></h2>
+          </header>
+          <p>
+          {% if p.content contains '<!--more-->' %}
+            {{ p.content | split:'<!--more-->' | first }}
+          {% else %}
+            {{ p.excerpt }}
+          {% endif %}
+          </p>
+          <div class="author hidden-xs">by <a href="#">{{ p.author }}</a></div>
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+
+    <div class="text-center">
+      <a href="#2" class="btn load" id="loadMore">Load More</a>
+    </div>
+  </section>
 </div>
