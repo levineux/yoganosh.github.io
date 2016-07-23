@@ -19,6 +19,22 @@
 
   <!-- Twitter Card data -->
   <meta name="twitter:card" value="summary">
+    <meta name="twitter:site" content="@publisher_handle">
+    <meta name="twitter:creator" content="@author_handle">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@publisher_handle">
+    <meta name="twitter:title" content="{{ page.title }} - Eight Chakras">
+    <meta name="twitter:description" content="{{ page.description }}">
+    <meta name="twitter:creator" content="@author_handle">
+  {% if page.open-graph.image == null %}
+    {% if page.image-fullpage %}
+      <meta property="twitter:image" content="http://{{ site.site_url }}{{ site.baseurl }}/images/{{ page.image-fullpage }}" />
+    {% elsif page.image %}
+      <meta property="twitter:image" content="http://{{ site.site_url }}{{ site.baseurl }}/images/{{ page.image }}" />
+    {% endif %}
+  {% endif %}
 
   <!-- Open Graph data -->
   <meta property="og:site_name" content="{{ site.title }}" />
