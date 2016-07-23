@@ -29,9 +29,7 @@
     <meta name="twitter:description" content="{{ page.description }}">
     <meta name="twitter:creator" content="@author_handle">
   {% if page.open-graph.image == null %}
-    {% if page.image-fullpage %}
-      <meta property="twitter:image" content="http://{{ site.site_url }}{{ site.baseurl }}/images/{{ page.image-fullpage }}" />
-    {% elsif page.image %}
+    {% if page.image %}
       <meta property="twitter:image" content="http://{{ site.site_url }}{{ site.baseurl }}/images/{{ page.image }}" />
     {% endif %}
   {% endif %}
@@ -58,10 +56,7 @@
     <meta property="og:description" content="{{ page.description }}" />
   {% endif %}
   {% if page.open-graph.image == null %}
-    {% if page.image-fullpage %}
-      <meta property="og:image" content="http://{{ site.site_url }}{{ site.baseurl }}/images/{{ page.image-fullpage }}" />
-      <meta property="og:image:secure_url" content="https://{{ site.site_url }}{{ site.baseurl }}/images/{{ page.image-fullpage }}" />
-    {% elsif page.image %}
+    {% if page.image %}
       <meta property="og:image" content="http://{{ site.site_url }}{{ site.baseurl }}/images/{{ page.image }}" />
       <meta property="og:image:secure_url" content="https://{{ site.site_url }}{{ site.baseurl }}/images/{{ page.image }}" />
     {% endif %}
