@@ -43,14 +43,15 @@
   {% endif %}
   {% if page.open-graph.image == null %}
     {% if page.image %}
-      <meta property="og:image" content="{{ site.site_url }}{{ site.baseurl }}/images/{{ page.image }}" />
+      <meta property="og:image" content="http://{{ site.site_url }}{{ site.baseurl }}/images/{{ page.image }}" />
+      <meta property="og:image:secure_url" content="https://{{ site.site_url }}{{ site.baseurl }}/images/{{ page.image }}" />
     {% endif %}
   {% endif %}
 
   <!-- Atom RSS Feed -->
   {% feed_meta %}
 
-  <link rel="canonical" href="{{ site.site_url }}{{ page.url }}" />
+  <link rel="canonical" href="https://{{ site.site_url }}{{ page.url }}" />
   <meta charset="UTF-8">
   <script src="https://use.typekit.net/uul1tfe.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
