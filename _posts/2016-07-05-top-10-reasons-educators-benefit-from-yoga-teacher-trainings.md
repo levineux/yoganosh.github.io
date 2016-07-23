@@ -5,7 +5,6 @@ author: "Eight Chakras Staff"
 categories:
 - mind
 image: "image12.jpg"
-image-fullpage: "article-photo.jpg"
 image-title: "Post Title"
 tags:
 - teaching

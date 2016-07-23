@@ -5,7 +5,6 @@ author: "Eight Chakras Staff"
 categories:
 - lifestyle
 image: "image17.jpg"
-image-fullpage: "article-photo.jpg"
 image-title: "Post Title"
 tags:
 - teaching
