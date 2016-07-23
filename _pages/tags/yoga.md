@@ -1,7 +1,7 @@
 ---
 layout: category
-archive-type: "tag"
-permalink: "/yoga"
+archive-type: "tag/"
+permalink: "/yoga/"
 title: "Yoga"
 description: "Read about Yoga"
 open-graph:

@@ -1,6 +1,6 @@
 ---
 layout: category
-permalink: "/travel"
+permalink: "/travel/"
 title: "Travel"
 color: "blue"
 description: "Read about Yoga for Travel"

@@ -1,6 +1,6 @@
 ---
 layout: category
-permalink: "/wellness"
+permalink: "/wellness/"
 title: "Wellness"
 color: "turquoise"
 description: "Read about Yoga for Wellness"

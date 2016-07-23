@@ -42,7 +42,7 @@ layout: default
         <!-- post tags -->
         <div class="tags">
           {% for tag in page.tags %}
-            <a href="{{ site.baseurl }}/{{ tag | replace: " ", "-" | downcase }}">{{ tag | capitalize }}</a>
+            <a href="{{ site.baseurl }}/{{ tag | replace: " ", "-" | downcase }}/">{{ tag | capitalize }}</a>
           {% endfor %}
         </div>
 
@@ -51,7 +51,7 @@ layout: default
           {% if page.author == author.name %}
           <div class="story-author">
               <div class="author pull-left hidden-xs">
-                  <img src="{{ site.baseurl }}/images/{{ author.pic }}" width="60px" heigh="60px">
+                  <img src="{{ site.baseurl }}/images/{{ author.pic }}" width="60px" heigh="60px" alt="Author Picture">
               </div>
               <div class="comment-content">
                   <h4 class="h4">{{ page.author }}</h4>
@@ -101,7 +101,7 @@ layout: default
       <article>
         <div class="row">
           <div class="col-sm-4 col-xs-12">
-            <figure><a href="story.html"><img src="{{ site.baseurl }}/images/{{ post.image }}" data-src="{{ site.baseurl }}/images/{{ post.image }}" class="lazyload block" alt="{{ post.image-title }}"></a></figure>
+            <figure><a href="{{ post.url | prepend: site.basurl }}"><img src="{{ site.baseurl }}/images/{{ post.image }}" data-src="{{ site.baseurl }}/images/{{ post.image }}" class="lazyload block" alt="{{ post.image-title }}"></a></figure>
           </div>
           <div class="col-sm-5 col-xs-12">
 
@@ -123,13 +123,11 @@ layout: default
             <header>
               <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
             </header>
-            <p>
             {% if post.content contains '<!--more-->' %}
               {{ post.content | split:'<!--more-->' | first }}
             {% else %}
               {{ post.excerpt }}
             {% endif %}
-            </p>
             <div class="author hidden-xs">by <a href="#">{{ post.author }}</a></div>
           </div>
         </div>

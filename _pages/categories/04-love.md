@@ -1,6 +1,6 @@
 ---
 layout: category
-permalink: "/love"
+permalink: "/love/"
 title: "Love"
 color: "pink"
 description: "Read about Yoga for Love"

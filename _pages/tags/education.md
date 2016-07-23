@@ -1,7 +1,7 @@
 ---
 layout: category
 archive-type: "tag"
-permalink: "/education"
+permalink: "/education/"
 title: "Education"
 description: "Read about Yoga for Education"
 open-graph:

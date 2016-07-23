@@ -1,6 +1,6 @@
 ---
 layout: category
-permalink: "/body"
+permalink: "/body/"
 title: "Body"
 color: "orange"
 description: "Read about Yoga for Body"

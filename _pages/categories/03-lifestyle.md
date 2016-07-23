@@ -1,6 +1,6 @@
 ---
 layout: category
-permalink: "/lifestyle"
+permalink: "/lifestyle/"
 title: "Lifestyle"
 color: "green"
 description: "Read about Yoga for Lifestyle"

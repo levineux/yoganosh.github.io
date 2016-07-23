@@ -28,14 +28,14 @@ layout: default
             {% assign cat_title = c.title | downcase %}
             {% if p.categories[0] == cat_title %}
 
-              <a class="tag {{ c.color }}"  href="{{ c.url | prepend: site.baseurl }}">
+              <a class="tag {{ c.color }}"  href="{{ c.url | prepend: site.baseurl }}/">
                 {{ cat_title | capitalize }}
               </a>
 
             {% endif %}
           {% endfor %}
         {% else %}
-          <a class="tag {{ page.color }}" href="{{ site.basurl }}/category/{{ p.categories[0] }}">{{ p.categories[0] }}</a>
+          <a class="tag {{ page.color }}" href="{{ site.basurl }}/{{ p.categories[0] }}/">{{ p.categories[0] }}</a>
         {% endif %}
 
           <div class="date"><time datetime="{{ p.date }}"></time></div>
@@ -43,13 +43,11 @@ layout: default
           <header>
               <h2><a href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a></h2>
           </header>
-          <p>
           {% if p.content contains '<!--more-->' %}
             {{ p.content | split:'<!--more-->' | first }}
           {% else %}
             {{ p.excerpt }}
           {% endif %}
-          </p>
           <div class="author hidden-xs">by <a href="#">{{ p.author }}</a></div>
         </div>
       </div>

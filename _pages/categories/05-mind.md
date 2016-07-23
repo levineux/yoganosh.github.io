@@ -1,6 +1,6 @@
 ---
 layout: category
-permalink: "/mind"
+permalink: "/mind/"
 title: "Mind"
 color: "purple"
 description: "Read about Yoga for Mind"

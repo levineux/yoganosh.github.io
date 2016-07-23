@@ -1,7 +1,7 @@
 ---
 layout: category
 archive-type: "tag"
-permalink: "/teaching"
+permalink: "/teaching/"
 title: "Teaching"
 description: "Read about Yoga for Teaching"
 open-graph:
