@@ -126,7 +126,7 @@ layout: default
             {% if post.content contains '<!--more-->' %}
               {{ post.content | split:'<!--more-->' | first }}
             {% else %}
-              {{ post.excerpt }}
+              <p>{{ post.excerpt }}</p>p>
             {% endif %}
             <div class="author hidden-xs">by <a href="#">{{ post.author }}</a></div>
           </div>
