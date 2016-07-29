@@ -1,3 +1,8 @@
+function onclickJSSocial() {
+    $('.jssocials-more').hide();
+    $('.jssocials-more').find(' ~ .jssocials-share').toggleClass('visible');
+}
+
 $(document).ready(function(){
     // $("img").unveil();
 
@@ -22,6 +27,7 @@ $(document).ready(function(){
 
                 $("<div>").addClass("jssocial-more")
                     .attr("data-layout", "button_count")
+                    .attr("onclick", "onclickJSSocial()")
                     .appendTo($result);
 
                 return $result;
@@ -36,10 +42,6 @@ $(document).ready(function(){
         shares: [{share: "facebook", label: "Share"}, {share: "twitter", label: "Tweet"},
         "pinterest"
         ]
-    });
-    $('.jssocials-more').click(function(){
-        $(this).hide();
-        $(this).find(' ~ .jssocials-share').toggleClass('visible');
     });
     $('.js-show-share').click(function(e){
     	e.preventDefault();
