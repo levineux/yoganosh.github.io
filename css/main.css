@@ -643,6 +643,30 @@ ul {
     width: 25%;
   }
 }
+.banner .search button {
+  float: left;
+  background: #00a78e;
+  text-transform: uppercase;
+  font-family: "proxima-nova-condensed", sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  letter-spacing: 1.6px;
+  color: #ffffff;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: none;
+  height: 39px;
+  width: 60px;
+  display: none;
+}
+.banner .search button:hover {
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .banner .search button {
+    width: 25%;
+  }
+}
 .main {
   margin: 0 auto;
   margin-bottom: 28px;
