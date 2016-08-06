@@ -63,6 +63,9 @@
     <meta property="og:{{og[0]}}" content="{{og_value}}">
     {% endif %}
   {% endfor %}
+  {% if page.open-graph.title == null %}
+    <meta property="og:title" content="{{ page.title }}" />
+  {% endif %}
   {% if page.open-graph.description == null %}
     {% if page.layout == "story" %}
       {% if page.content contains '<!--more-->' %}

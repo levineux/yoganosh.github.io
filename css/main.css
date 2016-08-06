@@ -1292,7 +1292,7 @@ ul {
   margin-bottom: 20px;
 }
 @media (max-width: 767px) {
-  .story blockquote {
+  .story blockquote p {
     font-size: 18px;
     line-height: 1.5;
     padding-left: 20px;
