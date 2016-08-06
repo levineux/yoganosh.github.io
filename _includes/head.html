@@ -18,16 +18,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
   <!-- Twitter Card data -->
-  <meta name="twitter:card" value="summary">
-    <meta name="twitter:site" content="@publisher_handle">
-    <meta name="twitter:creator" content="@author_handle">
-
-    <!-- Twitter Card data -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@publisher_handle">
-    <meta name="twitter:title" content="{{ page.title }} - Eight Chakras">
-    <meta name="twitter:description" content="{{ page.description }}">
-    <meta name="twitter:creator" content="@author_handle">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@publisher_handle">
+  <meta name="twitter:title" content="{{ page.title }} - Eight Chakras">
+  {% if page.layout == "story" %}
+    {% if page.content contains '<!--more-->' %}
+      <meta property="twitter:description" content="{{ page.content | split:'<!--more-->' | first | replace: '<p>','' | replace: '</p>','' }}" />
+    {% else %}
+      <meta property="twitter:description" content="{{ page.excerpt }}" />
+    {% endif %}
+  {% else %}
+      <meta name="twitter:description" content="{{ page.description }}">
+  {% endif %}
+  <meta name="twitter:creator" content="@author_handle">
   {% if page.open-graph.image == null %}
     {% if page.image-fullpage %}
       <meta property="twitter:image" content="http://{{ site.site_url }}{{ site.baseurl }}/images/{{ page.image-fullpage }}" />
@@ -61,7 +64,15 @@
     {% endif %}
   {% endfor %}
   {% if page.open-graph.description == null %}
-    <meta property="og:description" content="{{ page.description }}" />
+    {% if page.layout == "story" %}
+      {% if page.content contains '<!--more-->' %}
+        <meta property="og:description" content="{{ page.content | split:'<!--more-->' | first | replace: '<p>','' | replace: '</p>','' }}" />
+      {% else %}
+        <meta property="og:description" content="{{ page.excerpt }}" />
+      {% endif %}
+    {% else %}
+      <meta property="og:description" content="{{ page.description }}" />
+    {% endif %}
   {% endif %}
   {% if page.open-graph.image == null %}
     {% if page.image-fullpage %}
