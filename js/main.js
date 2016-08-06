@@ -124,7 +124,6 @@ $(document).ready(function(){
 
       var $form = $(this);
       $.post($form.attr("action"), $form.serialize()).then(function() {
-        alert("Thank you!");
         $('#mc-embedded-subscribe').hide();
         $('#mc-subscribe-success').show();
       });
@@ -135,8 +134,7 @@ $(document).ready(function(){
 
       var $form = $(this);
       $.post($form.attr("action"), $form.serialize()).then(function() {
-        alert("Thank you!");
-        $('#success_message').show();
+        $('#success_message').removeClass("hidden");
       });
     });
 
