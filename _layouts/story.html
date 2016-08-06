@@ -123,11 +123,13 @@ layout: default
             <header>
               <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
             </header>
+            <p>
             {% if post.content contains '<!--more-->' %}
               {{ post.content | split:'<!--more-->' | first }}
             {% else %}
-              <p>{{ post.excerpt }}</p>p>
+              {{ post.excerpt }}
             {% endif %}
+            </p>
             <div class="author hidden-xs">by <a href="#">{{ post.author }}</a></div>
           </div>
         </div>
