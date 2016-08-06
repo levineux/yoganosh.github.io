@@ -130,6 +130,16 @@ $(document).ready(function(){
       });
     });
 
+    $("#contact_form").submit(function(e) {
+      e.preventDefault();
+
+      var $form = $(this);
+      $.post($form.attr("action"), $form.serialize()).then(function() {
+        alert("Thank you!");
+        $('#success_message').show();
+      });
+    });
+
 });
 $(window).resize(function(){
     if (window.innerWidth < 767){
