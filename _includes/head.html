@@ -38,7 +38,7 @@
 
   <!-- Open Graph data -->
   <meta property="og:site_name" content="{{ site.title }}" />
-  <meta property="og:url" content="{{ site.site_url }}{% if page.url != "/"%}{{ page.url }}{% endif %}" />
+  <meta property="og:url" content="https://{{ site.site_url }}{% if page.url != "/"%}{{ page.url }}{% endif %}" />
   {% for og in page.open-graph %}
     {% if og[0] == "image" %}
       {% capture og_value %}{{ site.site_url }}/images/{{og[1]}}{% endcapture %}
