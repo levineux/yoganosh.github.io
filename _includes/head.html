@@ -52,7 +52,13 @@
     {% else %}
       {% assign og_value = og[1] %}
     {%endif%}
+
+    {% if og[0] == "image" %}
+    <meta property="og:{{og[0]}}" content="http://{{og_value}}">
+    <meta property="og:image:secure_url" content="https://{{og_value}}">
+    {% else %}
     <meta property="og:{{og[0]}}" content="{{og_value}}">
+    {% endif %}
   {% endfor %}
   {% if page.open-graph.description == null %}
     <meta property="og:description" content="{{ page.description }}" />
