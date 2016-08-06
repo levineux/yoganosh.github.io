@@ -23,9 +23,9 @@
   <meta name="twitter:title" content="{{ page.title }} - Eight Chakras">
   {% if page.layout == "story" %}
     {% if page.content contains '<!--more-->' %}
-      <meta property="twitter:description" content="{{ page.content | split:'<!--more-->' | first | replace: '<p>','' | replace: '</p>','' }}" />
+      <meta name="twitter:description" content="{{ page.content | split:'<!--more-->' | first | replace: '<p>','' | replace: '</p>','' }}" />
     {% else %}
-      <meta property="twitter:description" content="{{ page.excerpt }}" />
+      <meta name="twitter:description" content="{{ page.excerpt }}" />
     {% endif %}
   {% else %}
       <meta name="twitter:description" content="{{ page.description }}">
@@ -33,9 +33,9 @@
   <meta name="twitter:creator" content="@author_handle">
   {% if page.open-graph.image == null %}
     {% if page.image-fullpage %}
-      <meta property="twitter:image" content="http://{{ site.site_url }}{{ site.baseurl }}/images/{{ page.image-fullpage }}" />
+      <meta name="twitter:image" content="http://{{ site.site_url }}{{ site.baseurl }}/images/{{ page.image-fullpage }}" />
     {% elsif page.image %}
-      <meta property="twitter:image" content="http://{{ site.site_url }}{{ site.baseurl }}/images/{{ page.image }}" />
+      <meta name="twitter:image" content="http://{{ site.site_url }}{{ site.baseurl }}/images/{{ page.image }}" />
     {% endif %}
   {% endif %}
 
