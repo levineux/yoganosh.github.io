@@ -110,7 +110,7 @@
     {% endif %}
   {% else %}
     <meta property="pin:description" content="{{ page.description }}" />
-  {% else %}
+  {% endif %}
   {% if page.open-graph.image == null %}
     {% if page.image-fullpage %}
       <meta name="pin:media" content="https://{{ site.site_url }}{{ site.baseurl }}{{ page.image-fullpage }}" />
