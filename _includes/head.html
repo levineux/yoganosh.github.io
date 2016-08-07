@@ -9,13 +9,23 @@
 {% endcomment %}
 
   <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-
-  {% if page.description %}
-  <meta name="description" content="{{ page.description }}" >
+  {% if page.layout == "story" %}
+    {% if page.content contains '<!--more-->' %}
+      <meta name="description" content="{{ page.content | split:'<!--more-->' | first | replace: '<p>','' | replace: '</p>','' }}" />
+    {% elsif page.excerpt %}
+      <meta name="description" content="{{ page.excerpt }}" />
+    {% else %}
+      <meta name="description" content="{{ page.description }}" />
+    {% endif %}
+  {% else %}
+    {% if page.description %}
+    <meta name="description" content="{{ page.description }}" />
+    {% else %}
+    <meta name="description" content="Eight Chakras provides real news for a natural and healthy lifestyle based on the wisdom of Yoga." />
+    {% endif %}
   {% endif %}
 
-  <meta name="description" content="Eight Chakras provides real news for a natural and healthy lifestyle based on the wisdom of Yoga." />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
   <!-- Twitter Card data -->
   <meta name="twitter:card" content="summary">
