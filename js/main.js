@@ -18,7 +18,7 @@ $(document).ready(function(){
 		showCount: false,
         shares: ["facebook", "twitter", "pinterest", "googleplus", "stumbleupon", "linkedin"]
     });
-    var imageToShare = $('.story img:first').attr('src');
+    var imageToShare = $('.story img:first').attr('data-src');
 
     jsSocials.setDefaults("pinterest", {
         media: imageToShare
