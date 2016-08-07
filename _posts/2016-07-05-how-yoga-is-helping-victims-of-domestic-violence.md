@@ -4,7 +4,7 @@ title: "How Yoga is Helping Victims of Domestic Violence"
 author: "Eight Chakras Staff"
 categories:
 - wellness
-image: "image11.jpg"
+image: "/images/image11.jpg"
 image-title: "Post Title"
 tags:
 - teaching

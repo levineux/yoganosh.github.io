@@ -4,7 +4,7 @@ title: "Ivengar Yoga May Help Smokers Quit, this Time for Good"
 author: "Eight Chakras Staff"
 categories:
 - mind
-image: "image15.jpg"
+image: "/images/image15.jpg"
 image-title: "Post Title"
 tags:
 - teaching

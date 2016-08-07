@@ -11,7 +11,7 @@
           <div class="row"> \
           <div class="col-sm-4 col-xs-12"> \
           <figure> \
-          <a href="' + item.url + '"><img src="/images/placeholder-thumb.png" data-src="/images/' + item.image + '" class="lazyload block" alt="' + item.imageTitle + '"></a> \
+          <a href="' + item.url + '"><img src="/images/placeholder-thumb.png" data-src="' + item.image + '" class="lazyload block" alt="' + item.imageTitle + '"></a> \
           </figure> \
           </div> \
           <div class="col-sm-5 col-xs-12"> \

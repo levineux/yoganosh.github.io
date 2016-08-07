@@ -4,7 +4,7 @@ title: "Neti for Cough, Cold, and Congestion: Weird? Sure. Worth it? Absolutely.
 author: "Eight Chakras Staff"
 categories:
 - wellness
-image: "image9.jpg"
+image: "/images/image9.jpg"
 image-title: "Post Title"
 tags:
 - teaching

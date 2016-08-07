@@ -4,7 +4,7 @@ title: "Yoga and Stress: An Introduction"
 author: "Eight Chakras Staff"
 categories:
 - wellness
-image: "image2.jpg"
+image: "/images/image2.jpg"
 image-title: "Post Title"
 tags:
 - teaching

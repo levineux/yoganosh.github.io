@@ -4,7 +4,7 @@ title: "The Ultimate Yogi Diet and Why it’s Right for You"
 author: "Eight Chakras Staff"
 categories:
 - body
-image: "image13.jpg"
+image: "/images/image13.jpg"
 image-title: "Post Title"
 tags:
 - teaching

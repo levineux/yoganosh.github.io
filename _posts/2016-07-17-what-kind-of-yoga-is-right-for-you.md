@@ -4,8 +4,8 @@ title: "What Kind of Yoga is Right for You?"
 author: "Eight Chakras Staff"
 categories:
 - body
-image: "image1.jpg"
-image-fullpage: "article-photo.jpg"
+image: "/images/image1.jpg"
+image-fullpage: "/images/article-photo.jpg"
 image-title: "Post Title"
 tags:
 - teaching

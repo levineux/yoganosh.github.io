@@ -30,7 +30,7 @@ layout: default
         {% else %}
           {% assign img = page.image %}
         {% endif %}
-        <img src="{{ site.baseurl }}/images/placeholder-thumb.png" data-src="{{ site.baseurl }}/images/{{ img }}" class="lazyload block featured-image" alt="{{ page.image-title }}">
+        <img src="{{ site.baseurl }}/images/placeholder-thumb.png" data-src="{{ site.baseurl }}{{ img }}" class="lazyload block featured-image" alt="{{ page.image-title }}">
 
         <!-- post content -->
         {% if page.content contains '<!--more-->' %}

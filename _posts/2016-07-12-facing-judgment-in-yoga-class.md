@@ -4,7 +4,7 @@ title: "Facing Judgment in Yoga Class"
 author: "Eight Chakras Staff"
 categories:
 - lifestyle
-image: "image7.jpg"
+image: "/images/image7.jpg"
 image-title: "Post Title"
 tags:
 - teaching

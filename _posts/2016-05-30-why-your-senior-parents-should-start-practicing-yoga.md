@@ -4,7 +4,7 @@ title: "Why Your Senior Parents Should Start Practicing Yoga"
 author: "Eight Chakras Staff"
 categories:
 - wellness
-image: "image19.jpg"
+image: "/images/image19.jpg"
 image-title: "Post Title"
 tags:
 - teaching
