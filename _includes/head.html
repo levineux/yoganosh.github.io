@@ -121,6 +121,9 @@
     <meta name="pin:media" content="https://{{ site.site_url }}{{ site.baseurl }}{{ page.open-graph.image }}" />
   {% endif %}
 
+  <meta property="fb:admins" content="{{ site.fb_admins }}">
+  <meta property="fb:app_id" content="{{ site.fb_appid }}">
+
   <!-- Atom RSS Feed -->
   {% feed_meta %}
 

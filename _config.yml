@@ -4,6 +4,8 @@ site_url: "www.yoganosh.com"
 url: "https://www.yoganosh.com"
 version: 1.0
 excerpt_separator: <!--more-->
+fb_admins: "fb_admins"
+fb_appid: "fb_appid"
 
 baseurl: ""
 
