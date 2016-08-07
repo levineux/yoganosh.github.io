@@ -18,6 +18,11 @@ $(document).ready(function(){
 		showCount: false,
         shares: ["facebook", "twitter", "pinterest", "googleplus", "stumbleupon", "linkedin"]
     });
+    var imageToShare = $('.story img:first');
+
+    jsSocials.setDefaults("pinterest", {
+        media: imageToShare
+    });
     $(".js-share-story").jsSocials({
 		showCount: false,
         shares: [{share: "facebook", label: "Share on Facebook"}, {share: "twitter", label: "Share on Twitter"},
