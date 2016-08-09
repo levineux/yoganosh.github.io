@@ -9,36 +9,56 @@
 {% endcomment %}
 
   <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-
-  {% if page.description %}
-  <meta name="description" content="{{ page.description }}" >
+  {% if page.layout == "story" %}
+    {% if page.content contains '<!--more-->' %}
+      <meta name="description" content="{{ page.content | split:'<!--more-->' | first | replace: '<p>','' | replace: '</p>','' }}" />
+    {% elsif page.excerpt %}
+      <meta name="description" content="{{ page.excerpt }}" />
+    {% else %}
+      <meta name="description" content="{{ page.description }}" />
+    {% endif %}
+  {% else %}
+    {% if page.description %}
+    <meta name="description" content="{{ page.description }}" />
+    {% else %}
+    <meta name="description" content="Eight Chakras provides real news for a natural and healthy lifestyle based on the wisdom of Yoga." />
+    {% endif %}
   {% endif %}
 
-  <meta name="description" content="Eight Chakras provides real news for a natural and healthy lifestyle based on the wisdom of Yoga." />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
   <!-- Twitter Card data -->
-  <meta name="twitter:card" value="summary">
-    <meta name="twitter:site" content="@publisher_handle">
-    <meta name="twitter:creator" content="@author_handle">
-
-    <!-- Twitter Card data -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@publisher_handle">
-    <meta name="twitter:title" content="{{ page.title }} - Eight Chakras">
-    <meta name="twitter:description" content="{{ page.description }}">
-    <meta name="twitter:creator" content="@author_handle">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@publisher_handle">
+  <meta name="twitter:title" content="{{ page.title }} - Eight Chakras">
+  {% if page.layout == "story" %}
+    {% if page.content contains '<!--more-->' %}
+      <meta name="twitter:description" content="{{ page.content | split:'<!--more-->' | first | replace: '<p>','' | replace: '</p>','' }}" />
+    {% else %}
+      <meta name="twitter:description" content="{{ page.excerpt }}" />
+    {% endif %}
+  {% else %}
+      <meta name="twitter:description" content="{{ page.description }}">
+  {% endif %}
+  <meta name="twitter:creator" content="@author_handle">
   {% if page.open-graph.image == null %}
     {% if page.image-fullpage %}
-      <meta property="twitter:image" content="http://{{ site.site_url }}{{ site.baseurl }}/images/{{ page.image-fullpage }}" />
+      <meta name="twitter:image" content="https://{{ site.site_url }}{{ site.baseurl }}{{ page.image-fullpage }}" />
     {% elsif page.image %}
-      <meta property="twitter:image" content="http://{{ site.site_url }}{{ site.baseurl }}/images/{{ page.image }}" />
+      <meta name="twitter:image" content="https://{{ site.site_url }}{{ site.baseurl }}{{ page.image }}" />
     {% endif %}
+  {% else %}
+    <meta name="twitter:image" content="https://{{ site.site_url }}{{ site.baseurl }}{{ page.open-graph.image }}" />
   {% endif %}
 
   <!-- Open Graph data -->
   <meta property="og:site_name" content="{{ site.title }}" />
-  <meta property="og:url" content="{{ site.site_url }}{{ page.url }}" />
+  <meta property="og:url" content="https://{{ site.site_url }}{% if page.url != "/"%}{{ page.url }}{% endif %}" />
+  {% if page.layout == "story" %}
+    <meta property="og:type" content="article" />
+  {% else %}
+    <meta property="og:type" content="blog" />
+  {% endif %}
   {% for og in page.open-graph %}
     {% if og[0] == "image" %}
       {% capture og_value %}{{ site.site_url }}/images/{{og[1]}}{% endcapture %}
@@ -52,21 +72,70 @@
     {% else %}
       {% assign og_value = og[1] %}
     {%endif%}
+
+    {% if og[0] == "image" %}
+    <meta property="og:{{og[0]}}" content="http://{{og_value}}">
+    <meta property="og:image:secure_url" content="https://{{og_value}}">
+    {% else %}
     <meta property="og:{{og[0]}}" content="{{og_value}}">
+    {% endif %}
   {% endfor %}
+  {% if page.open-graph.title == null %}
+    <meta property="og:title" content="{{ page.title }}" />
+  {% endif %}
   {% if page.open-graph.description == null %}
-    <meta property="og:description" content="{{ page.description }}" />
+    {% if page.layout == "story" %}
+      {% if page.content contains '<!--more-->' %}
+        <meta property="og:description" content="{{ page.content | split:'<!--more-->' | first | replace: '<p>','' | replace: '</p>','' }}" />
+      {% else %}
+        <meta property="og:description" content="{{ page.excerpt }}" />
+      {% endif %}
+    {% else %}
+      <meta property="og:description" content="{{ page.description }}" />
+    {% endif %}
   {% endif %}
   {% if page.open-graph.image == null %}
     {% if page.image-fullpage %}
-      <meta property="og:image" content="http://{{ site.site_url }}{{ site.baseurl }}/images/{{ page.image-fullpage }}" />
-      <meta property="og:image:secure_url" content="https://{{ site.site_url }}{{ site.baseurl }}/images/{{ page.image-fullpage }}" />
+      <meta property="og:image" content="https://{{ site.site_url }}{{ site.baseurl }}{{ page.image-fullpage }}" />
+      <meta property="og:image:secure_url" content="https://{{ site.site_url }}{{ site.baseurl }}{{ page.image-fullpage }}" />
     {% elsif page.image %}
-      <meta property="og:image" content="http://{{ site.site_url }}{{ site.baseurl }}/images/{{ page.image }}" />
-      <meta property="og:image:secure_url" content="https://{{ site.site_url }}{{ site.baseurl }}/images/{{ page.image }}" />
+      <meta property="og:image" content="https://{{ site.site_url }}{{ site.baseurl }}{{ page.image }}" />
+      <meta property="og:image:secure_url" content="https://{{ site.site_url }}{{ site.baseurl }}{{ page.image }}" />
     {% endif %}
   {% endif %}
 
+  <!-- other social sharing meta tags -->
+  {% if page.layout == "story" %}
+  <meta property="article:published_time" content="{{ page.date }}" />
+  <meta property="article:author" content="{{ page.author }}" />
+  {% else %}
+  <meta property="article:published_time" content="2014-08-12T00:01:56+00:00" />
+  <meta property="article:author" content="Eight Chakras Staff" />
+  {% endif %}
+  {% if page.layout == "story" %}
+    {% if page.content contains '<!--more-->' %}
+      <meta property="pin:description" content="{{ page.content | split:'<!--more-->' | first | replace: '<p>','' | replace: '</p>','' }}" />
+    {% else %}
+      <meta property="pin:description" content="{{ page.excerpt }}" />
+    {% endif %}
+  {% else %}
+    <meta property="pin:description" content="{{ page.description }}" />
+  {% endif %}
+  {% if page.open-graph.image == null %}
+    {% if page.image-fullpage %}
+      <meta name="pin:media" content="https://{{ site.site_url }}{{ site.baseurl }}{{ page.image-fullpage }}" />
+    {% elsif page.image %}
+      <meta name="pin:media" content="https://{{ site.site_url }}{{ site.baseurl }}{{ page.image }}" />
+    {% endif %}
+  {% else %}
+    <meta name="pin:media" content="https://{{ site.site_url }}{{ site.baseurl }}{{ page.open-graph.image }}" />
+  {% endif %}
+
+  <meta property="fb:admins" content="{{ site.fb_admins }}">
+  <meta property="fb:app_id" content="{{ site.fb_appid }}">
+
+  <!-- Atom RSS Feed -->
+  <link type="application/atom+xml" rel="alternate" href="{{ site.site_url }}{{ site.baseurl }}feed.xml" title="Eight Chakras" />
 
   <link rel="canonical" href="https://{{ site.site_url }}{{ page.url }}" />
   <meta charset="UTF-8">

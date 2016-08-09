@@ -4,7 +4,7 @@ title: "So You Want to be a Yoga Teacher? Here’s What You Should Know."
 author: "Eight Chakras Staff"
 categories:
 - lifestyle
-image: "image17.jpg"
+image: "/images/image17.jpg"
 image-title: "Post Title"
 tags:
 - teaching

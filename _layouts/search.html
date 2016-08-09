@@ -6,14 +6,27 @@ layout: default
     <section class="latest-stories content">
       <h3 class="search-results-title" style="display:none;">Search Results for: </h3>
       <div id="search-results"></div>
+      <div class="text-center">
+        <a href="#2" class="btn load" id="loadMore">Load More</a>
+      </div>
     </section>
 </div>
 
 <script>
   window.store = {
     {% for post in site.posts %}
+
+      {% assign pages = site.pages | sort:"weight" %}
+      {% for p in pages %}
+        {% assign cat_title = p.title | downcase %}
+        {% if post.categories[0] == cat_title %}
+          {% assign cat_color =  p.color %}
+        {% endif %}
+      {% endfor %}
+
       "{{ post.url | slugify }}": {
         "title": "{{ post.title | xml_escape }}",
+        "color": "{{ cat_color | xml_escape }}",
         "author": "{{ post.author | xml_escape }}",
         "category": "{{ post.categories[0] | xml_escape }}",
         "image": "{{ post.image | xml_escape }}",
@@ -26,5 +39,3 @@ layout: default
     {% endfor %}
   };
 </script>
-<script src="/js/lunr.min.js"></script>
-<script src="/js/search.js"></script>

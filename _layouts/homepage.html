@@ -15,7 +15,7 @@ layout: default
 	  <article style="display:none;">
       <div class="row">
         <div class="col-sm-4 col-xs-12">
-          <figure><a href="{{ post.url | prepend: site.basurl }}"><img src="{{ site.baseurl }}/images/placeholder-thumb.png" data-src="{{ site.baseurl }}/images/{{ post.image }}" class="lazyload block" alt="{{ post.image-title }}"></a></figure>
+          <figure><a href="{{ post.url | prepend: site.basurl }}"><img src="{{ site.baseurl }}/images/placeholder-thumb.png" data-src="{{ site.baseurl }}{{ post.image }}" class="lazyload block" alt="{{ post.image-title }}"></a></figure>
  	      </div>
         <div class="col-sm-5 col-xs-12">
 

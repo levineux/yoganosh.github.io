@@ -1,8 +1,11 @@
 # Site settings
 title: Eight Chakras
-site_url: "examiner-leggings-73103.netlify.com"
+site_url: "www.yoganosh.com"
+url: "https://www.yoganosh.com"
 version: 1.0
 excerpt_separator: <!--more-->
+fb_admins: "fb_admins"
+fb_appid: "fb_appid"
 
 baseurl: ""
 
@@ -24,6 +27,9 @@ markdown: kramdown
 kramdown:
   auto_ids:       true
   auto_id_stripping:    true
+
+gems:
+  - jekyll-sitemap
 
 # HTML Compression settings
 #compress_html:

@@ -18,6 +18,11 @@ $(document).ready(function(){
 		showCount: false,
         shares: ["facebook", "twitter", "pinterest", "googleplus", "stumbleupon", "linkedin"]
     });
+    var imageToShare = $('.story img:first').attr('data-src');
+
+    jsSocials.setDefaults("pinterest", {
+        media: imageToShare
+    });
     $(".js-share-story").jsSocials({
 		showCount: false,
         shares: [{share: "facebook", label: "Share on Facebook"}, {share: "twitter", label: "Share on Twitter"},
@@ -124,7 +129,17 @@ $(document).ready(function(){
 
       var $form = $(this);
       $.post($form.attr("action"), $form.serialize()).then(function() {
-        alert("Thank you!");
+        $('#mc-embedded-subscribe').hide();
+        $('#mc-subscribe-success').show();
+      });
+    });
+
+    $("#contact_form").submit(function(e) {
+      e.preventDefault();
+
+      var $form = $(this);
+      $.post($form.attr("action"), $form.serialize()).then(function() {
+        $('#success_message').removeClass("hidden");
       });
     });
 

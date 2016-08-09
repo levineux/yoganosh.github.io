@@ -4,7 +4,7 @@ title: "New Research Reveals Why Yoga Belongs in High Schools"
 author: "Eight Chakras Staff"
 categories:
 - lifestyle
-image: "image10.jpg"
+image: "/images/image10.jpg"
 image-title: "Post Title"
 tags:
 - teaching

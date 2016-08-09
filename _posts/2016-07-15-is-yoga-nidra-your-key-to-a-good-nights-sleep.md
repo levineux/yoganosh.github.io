@@ -4,7 +4,7 @@ title: "Is Yoga Nidra Your Key to a Good Night’s Sleep?"
 author: "Eight Chakras Staff"
 categories:
 - wellness
-image: "image3.jpg"
+image: "/images/image3.jpg"
 image-title: "Post Title"
 tags:
 - teaching

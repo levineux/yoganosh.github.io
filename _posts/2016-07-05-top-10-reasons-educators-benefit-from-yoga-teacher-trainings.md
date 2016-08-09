@@ -4,7 +4,7 @@ title: "Top 10 Reasons Educators Benefit from Yoga Teacher Trainings"
 author: "Eight Chakras Staff"
 categories:
 - mind
-image: "image12.jpg"
+image: "/images/image12.jpg"
 image-title: "Post Title"
 tags:
 - teaching

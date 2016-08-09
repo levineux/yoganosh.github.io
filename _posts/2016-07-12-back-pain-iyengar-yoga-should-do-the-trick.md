@@ -4,7 +4,7 @@ title: "Back Pain? Iyengar Yoga Should Do the Trick"
 author: "Eight Chakras Staff"
 categories:
 - love
-image: "image8.jpg"
+image: "/images/image8.jpg"
 image-title: "Post Title"
 tags:
 - teaching

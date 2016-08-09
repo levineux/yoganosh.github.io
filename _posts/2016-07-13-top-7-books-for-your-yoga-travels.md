@@ -4,7 +4,7 @@ title: "Top 7 Books for Your Yoga Travels"
 author: "Eight Chakras Staff"
 categories:
 - travel
-image: "image5.jpg"
+image: "/images/image5.jpg"
 image-title: "Post Title"
 tags:
 - teaching

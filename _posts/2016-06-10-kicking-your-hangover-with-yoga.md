@@ -4,7 +4,7 @@ title: "Kicking Your Hangover with Yoga"
 author: "Eight Chakras Staff"
 categories:
 - body
-image: "image18.jpg"
+image: "/images/image18.jpg"
 image-title: "Post Title"
 tags:
 - teaching

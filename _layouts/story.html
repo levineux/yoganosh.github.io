@@ -30,7 +30,7 @@ layout: default
         {% else %}
           {% assign img = page.image %}
         {% endif %}
-        <img src="{{ site.baseurl }}/images/placeholder-thumb.png" data-src="{{ site.baseurl }}/images/{{ img }}" class="lazyload block featured-image" alt="{{ page.image-title }}">
+        <img src="{{ site.baseurl }}/images/placeholder-thumb.png" data-src="{{ site.baseurl }}{{ img }}" class="lazyload block featured-image" alt="{{ page.image-title }}">
 
         <!-- post content -->
         {% if page.content contains '<!--more-->' %}
@@ -101,7 +101,7 @@ layout: default
       <article>
         <div class="row">
           <div class="col-sm-4 col-xs-12">
-            <figure><a href="{{ post.url | prepend: site.basurl }}"><img src="{{ site.baseurl }}/images/{{ post.image }}" data-src="{{ site.baseurl }}/images/{{ post.image }}" class="lazyload block" alt="{{ post.image-title }}"></a></figure>
+            <figure><a href="{{ post.url | prepend: site.basurl }}"><img src="{{ site.baseurl }}{{ post.image }}" data-src="{{ site.baseurl }}{{ post.image }}" class="lazyload block" alt="{{ post.image-title }}"></a></figure>
           </div>
           <div class="col-sm-5 col-xs-12">
 
@@ -123,11 +123,13 @@ layout: default
             <header>
               <h2><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
             </header>
+            <p>
             {% if post.content contains '<!--more-->' %}
               {{ post.content | split:'<!--more-->' | first }}
             {% else %}
-              <p>{{ post.excerpt }}</p>p>
+              {{ post.excerpt }}
             {% endif %}
+            </p>
             <div class="author hidden-xs">by <a href="#">{{ post.author }}</a></div>
           </div>
         </div>

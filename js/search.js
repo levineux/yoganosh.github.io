@@ -7,11 +7,11 @@
 
       for (var i = 0; i < results.length; i++) {  // Iterate over the results
         var item = store[results[i].ref];
-        appendString += '<article> \
+        appendString += '<article style="display:none;"> \
           <div class="row"> \
           <div class="col-sm-4 col-xs-12"> \
           <figure> \
-          <a href="' + item.url + '"><img src="/images/placeholder-thumb.png" data-src="/images/' + item.image + '" class="lazyload block" alt="' + item.imageTitle + '"></a> \
+          <a href="' + item.url + '"><img src="/images/placeholder-thumb.png" data-src="' + item.image + '" class="lazyload block" alt="' + item.imageTitle + '"></a> \
           </figure> \
           </div> \
           <div class="col-sm-5 col-xs-12"> \
@@ -77,6 +77,39 @@
 
       var results = idx.search(searchTerm); // Get lunr to perform a search
       displaySearchResults(results, window.store, searchTerm); // We'll write this in the next section
+
+    }
+
+    postsSize = $(".content article").size();
+    var pageNum = window.location.hash.substr(1);
+    x=10;
+    if (pageNum > 0) x=x*pageNum;
+    $('.content article:lt('+x+')').show();
+    if (x >= postsSize) $('#loadMore').hide();
+    $('#loadMore').click(function (e) {
+      e.preventDefault;
+      x= (x+5 <= postsSize) ? x+5 : postsSize;
+      $('.content article:lt('+x+')').show();
+      if(x == postsSize) {
+        $('#loadMore').hide();
+      } else {
+        if (pageNum == "") {
+          pageNum = 2;
+        } else {
+          pageNum += 1;
+        }
+        this.setAttribute('href', "#" + pageNum);
+      }
+    });
+
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
   }
 })();

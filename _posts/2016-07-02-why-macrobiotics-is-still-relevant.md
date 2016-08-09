@@ -4,7 +4,7 @@ title: "Why Macrobiotics is Still Relevant"
 author: "Eight Chakras Staff"
 categories:
 - wellness
-image: "image14.jpg"
+image: "/images/image14.jpg"
 image-title: "Post Title"
 tags:
 - teaching

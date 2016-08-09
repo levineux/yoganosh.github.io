@@ -4,7 +4,7 @@ title: "Chronic Pain? Meditate On That"
 author: "Eight Chakras Staff"
 categories:
 - wellness
-image: "image4.jpg"
+image: "/images/image4.jpg"
 image-title: "Post Title"
 tags:
 - teaching

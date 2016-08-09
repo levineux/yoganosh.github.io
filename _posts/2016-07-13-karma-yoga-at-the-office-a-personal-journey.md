@@ -4,7 +4,7 @@ title: "Karma Yoga at the Office: A Personal Journey"
 author: "Eight Chakras Staff"
 categories:
 - mind
-image: "image6.jpg"
+image: "/images/image6.jpg"
 image-title: "Post Title"
 tags:
 - teaching
