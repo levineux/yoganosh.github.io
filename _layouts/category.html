@@ -10,11 +10,12 @@ layout: default
     {% assign posts = site.categories.[archive] %}
 {% endif %}
 
+<div id="catID" data-catID="{{ archive }}" class="hidden"></div>
 <div class="main container">
   <section class="latest-stories content">
     <h3>Most Recent in <span class="{{ page.color }}">{{ page.title }}</span></h3>
 
-    {% for p in posts %}
+    {% for p in posts limit:5 %}
     <article>
       <div class="row">
         <div class="col-sm-4 col-xs-12">

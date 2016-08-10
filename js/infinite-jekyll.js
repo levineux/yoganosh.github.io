@@ -4,7 +4,8 @@ $(function() {
       isFetchingPosts = false,
       shouldFetchPosts = true,
       postsToLoad = $(".content article").size(),
-      loadNewPostsThreshold = 100;
+      loadNewPostsThreshold = 100,
+      catID = $("#catID").attr("data-catID");
 
   // Load the JSON file containing all URLs
   $.getJSON('/all-posts.json', function(data) {
@@ -13,6 +14,19 @@ $(function() {
     // If there aren't any more posts available to load than already visible, disable fetching
     if (postURLs.length <= postsToLoad)
       disableFetching();
+    else {
+      // Filter array of posts by category if on category page
+      if (catID) {
+        for (var ii=0; ii < postURLs.length; ii++) {
+          if (postURLs[ii].categories.indexOf(catID) == -1 ) {
+            postURLs.splice(ii,1);
+            ii--;
+          }
+        }
+        if (postURLs.length <= postsToLoad)
+          disableFetching();
+      }
+    }
   });
 
   // If there's no spinner, it's not a page where posts should be fetched
@@ -65,10 +79,10 @@ $(function() {
   }
 
   function fetchPostWithIndex(index, callback) {
-    var postURL = postURLs[index];
+    var postURL = postURLs[index].url;
 
     $.get(postURL, function(data) {
-      $(data).find(".loading-more").appendTo(".content");
+      $(data).find(".loading-more").appendTo(".content").removeClass("hidden");
       callback();
     });
   }
@@ -76,7 +90,7 @@ $(function() {
   function disableFetching() {
     shouldFetchPosts = false;
     isFetchingPosts = false;
-    $(".infinite-spinner").fadeOut();
+    $(".infinite-spinner").hide();
   }
 
 });
