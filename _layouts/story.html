@@ -89,6 +89,41 @@ layout: default
     </div>
   </article>
 
+<article class="loading-more">
+  <div class="row">
+    <div class="col-sm-4 col-xs-12">
+      <figure><a href="{{ page.url | prepend: site.basurl }}"><img src="{{ site.baseurl }}/images/placeholder-thumb.png" data-src="{{ site.baseurl }}{{ page.image }}" class="lazyload block" alt="{{ page.image-title }}"></a></figure>
+    </div>
+    <div class="col-sm-5 col-xs-12">
+
+    {% assign pages = site.pages | sort:"weight" %}
+
+    {% for p in pages %}
+      {% assign cat_title = p.title | downcase %}
+      {% if page.categories[0] == cat_title %}
+
+        <a class="tag {{ p.color }}"  href="{{ p.url | prepend: site.baseurl }}">
+          {{ p.title | capitalize }}
+        </a>
+
+      {% endif %}
+    {% endfor %}
+
+      <div class="date"><time datetime="{{ page.date }}"></time></div>
+      <div class="clearfix"></div>
+      <header>
+        <h2><a href="{{ page.url | prepend: site.basurl }}">{{ page.title }}</a></h2>
+      </header>
+      {% if page.content contains '<!--more-->' %}
+        {{ page.content | split:'<!--more-->' | first }}
+      {% else %}
+        <p>{{ page.excerpt }}</p>
+      {% endif %}
+      <div class="author hidden-xs">by <a href="#">{{ page.author }}</a></div>
+    </div>
+  </div>
+</article>
+
   {% if page.recommended-stories %}
   <section class="latest-stories">
     <h3>Recommended For You</h3>

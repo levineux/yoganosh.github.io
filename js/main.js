@@ -102,27 +102,27 @@ $(document).ready(function(){
         }
     });
 
-    postsSize = $(".content article").size();
-    var pageNum = window.location.hash.substr(1);
-    x=5;
-    if (pageNum > 0) x=x*pageNum;
-    $('.content article:lt('+x+')').show();
-    if (x >= postsSize) $('#loadMore').hide();
-    $('#loadMore').click(function (e) {
-      e.preventDefault;
-      x= (x+5 <= postsSize) ? x+5 : postsSize;
-      $('.content article:lt('+x+')').show();
-      if(x == postsSize) {
-        $('#loadMore').hide();
-      } else {
-        if (pageNum == "") {
-          pageNum = 2;
-        } else {
-          pageNum += 1;
-        }
-        this.setAttribute('href', "#" + pageNum);
-      }
-    });
+    // postsSize = $(".content article").size();
+    // var pageNum = window.location.hash.substr(1);
+    // x=5;
+    // if (pageNum > 0) x=x*pageNum;
+    // $('.content article:lt('+x+')').show();
+    // if (x >= postsSize) $('#loadMore').hide();
+    // $('#loadMore').click(function (e) {
+    //   e.preventDefault;
+    //   x= (x+5 <= postsSize) ? x+5 : postsSize;
+    //   $('.content article:lt('+x+')').show();
+    //   if(x == postsSize) {
+    //     $('#loadMore').hide();
+    //   } else {
+    //     if (pageNum == "") {
+    //       pageNum = 2;
+    //     } else {
+    //       pageNum += 1;
+    //     }
+    //     this.setAttribute('href', "#" + pageNum);
+    //   }
+    // });
 
     $("#mc-embedded-subscribe-form").submit(function(e) {
       e.preventDefault();

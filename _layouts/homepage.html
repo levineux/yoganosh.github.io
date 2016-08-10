@@ -11,8 +11,8 @@ layout: default
 	<section class="latest-stories content">
 	  <h3>Most Recent</h3>
 
-    {% for post in site.posts %}
-	  <article style="display:none;">
+    {% for post in site.posts limit: 5 %}
+	  <article>
       <div class="row">
         <div class="col-sm-4 col-xs-12">
           <figure><a href="{{ post.url | prepend: site.basurl }}"><img src="{{ site.baseurl }}/images/placeholder-thumb.png" data-src="{{ site.baseurl }}{{ post.image }}" class="lazyload block" alt="{{ post.image-title }}"></a></figure>
@@ -47,8 +47,8 @@ layout: default
       </div>
     </article>
     {% endfor %}
-    <div class="text-center">
-      <a href="#2" class="btn load" id="loadMore">Load More</a>
-    </div>
+
 	</section>
+  <div class="infinite-spinner"></div>
+
 </div>
