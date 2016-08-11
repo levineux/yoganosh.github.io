@@ -106,8 +106,8 @@
   {% endif %}
   {% if page.open-graph.image == null %}
     {% if page.facebook-image %}
-      <meta property="og:image" content="https://{{ site.site_url }}{{ site.baseurl }}{{ page.facebook-image  }}" />
-      <meta property="og:image:secure_url" content="https://{{ site.site_url }}{{ site.baseurl }}{{ page.facebook-image  }}" />
+      <meta property="og:image" content="https://{{ site.site_url }}{{ site.baseurl }}{{ page.facebook-image }}" />
+      <meta property="og:image:secure_url" content="https://{{ site.site_url }}{{ site.baseurl }}{{ page.facebook-image }}" />
     {% elsif page.image-fullpage %}
       <meta property="og:image" content="https://{{ site.site_url }}{{ site.baseurl }}{{ page.image-fullpage }}" />
       <meta property="og:image:secure_url" content="https://{{ site.site_url }}{{ site.baseurl }}{{ page.image-fullpage }}" />
@@ -118,7 +118,7 @@
   {% endif %}
   {% if page.open-graph.headline == null %}
     {% if page.social-media-description %}
-      <meta itemprop="og:headline" content="{{ page.social-media-description }}" />}
+      <meta itemprop="og:headline" content="{{ page.social-media-description }}" />
     {% endif %}
   {% endif %}
 
