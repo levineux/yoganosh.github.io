@@ -1,12 +1,16 @@
 ---
 layout: story
 title: "What Kind of Yoga is Right for You?"
+social-media-title: "Are You Practicing the Right Kind Of Yoga?"
+social-media-description: "It depends on what you're trying to achieve."
 author: "Eight Chakras Staff"
 categories:
 - body
 image: "/images/image1.jpg"
 image-fullpage: "/images/article-photo.jpg"
 image-title: "Post Title"
+facebook-image: "/images/article-photo-800x400.jpg"
+twitter-image: "/images/article-photo-500x200.jpg"
 tags:
 - teaching
 - yoga

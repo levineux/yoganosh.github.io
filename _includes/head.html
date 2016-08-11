@@ -28,21 +28,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
   <!-- Twitter Card data -->
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@publisher_handle">
+  {% if page.social-media-title %}
+  <meta name="twitter:title" content="{{ page.social-media-title }} - Eight Chakras">
+  {% else %}
   <meta name="twitter:title" content="{{ page.title }} - Eight Chakras">
+  {% endif %}
   {% if page.layout == "story" %}
-    {% if page.content contains '<!--more-->' %}
-      <meta name="twitter:description" content="{{ page.content | split:'<!--more-->' | first | replace: '<p>','' | replace: '</p>','' }}" />
+    {% if page.social-media-description %}
+      <meta name="twitter:description" content="{{ page.social-media-description }}" />
     {% else %}
-      <meta name="twitter:description" content="{{ page.excerpt }}" />
+      <meta name="twitter:description" content="{{ page.description }}">
     {% endif %}
   {% else %}
       <meta name="twitter:description" content="{{ page.description }}">
   {% endif %}
   <meta name="twitter:creator" content="@author_handle">
   {% if page.open-graph.image == null %}
-    {% if page.image-fullpage %}
+    {% if page.twitter-image %}
+      <meta name="twitter:image" content="https://{{ site.site_url }}{{ site.baseurl }}{{ page.twitter-image }}" />
+    {% elsif page.image-fullpage %}
       <meta name="twitter:image" content="https://{{ site.site_url }}{{ site.baseurl }}{{ page.image-fullpage }}" />
     {% elsif page.image %}
       <meta name="twitter:image" content="https://{{ site.site_url }}{{ site.baseurl }}{{ page.image }}" />
@@ -81,7 +87,11 @@
     {% endif %}
   {% endfor %}
   {% if page.open-graph.title == null %}
+    {% if page.social-media-title %}
+    <meta property="og:title" content="{{ page.social-media-title }}" />
+    {% else %}
     <meta property="og:title" content="{{ page.title }}" />
+    {% endif %}
   {% endif %}
   {% if page.open-graph.description == null %}
     {% if page.layout == "story" %}
@@ -95,12 +105,20 @@
     {% endif %}
   {% endif %}
   {% if page.open-graph.image == null %}
-    {% if page.image-fullpage %}
+    {% if page.facebook-image %}
+      <meta property="og:image" content="https://{{ site.site_url }}{{ site.baseurl }}{{ page.facebook-image  }}" />
+      <meta property="og:image:secure_url" content="https://{{ site.site_url }}{{ site.baseurl }}{{ page.facebook-image  }}" />
+    {% elsif page.image-fullpage %}
       <meta property="og:image" content="https://{{ site.site_url }}{{ site.baseurl }}{{ page.image-fullpage }}" />
       <meta property="og:image:secure_url" content="https://{{ site.site_url }}{{ site.baseurl }}{{ page.image-fullpage }}" />
     {% elsif page.image %}
       <meta property="og:image" content="https://{{ site.site_url }}{{ site.baseurl }}{{ page.image }}" />
       <meta property="og:image:secure_url" content="https://{{ site.site_url }}{{ site.baseurl }}{{ page.image }}" />
+    {% endif %}
+  {% endif %}
+  {% if page.open-graph.headline == null %}
+    {% if page.social-media-description %}
+      <meta itemprop="og:headline" content="{{ page.social-media-description }}" />}
     {% endif %}
   {% endif %}
 
@@ -111,24 +129,6 @@
   {% else %}
   <meta property="article:published_time" content="2014-08-12T00:01:56+00:00" />
   <meta property="article:author" content="Eight Chakras Staff" />
-  {% endif %}
-  {% if page.layout == "story" %}
-    {% if page.content contains '<!--more-->' %}
-      <meta property="pin:description" content="{{ page.content | split:'<!--more-->' | first | replace: '<p>','' | replace: '</p>','' }}" />
-    {% else %}
-      <meta property="pin:description" content="{{ page.excerpt }}" />
-    {% endif %}
-  {% else %}
-    <meta property="pin:description" content="{{ page.description }}" />
-  {% endif %}
-  {% if page.open-graph.image == null %}
-    {% if page.image-fullpage %}
-      <meta name="pin:media" content="https://{{ site.site_url }}{{ site.baseurl }}{{ page.image-fullpage }}" />
-    {% elsif page.image %}
-      <meta name="pin:media" content="https://{{ site.site_url }}{{ site.baseurl }}{{ page.image }}" />
-    {% endif %}
-  {% else %}
-    <meta name="pin:media" content="https://{{ site.site_url }}{{ site.baseurl }}{{ page.open-graph.image }}" />
   {% endif %}
 
   <meta property="fb:admins" content="{{ site.fb_admins }}">
