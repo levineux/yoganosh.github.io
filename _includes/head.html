@@ -119,6 +119,7 @@
   {% if page.open-graph.headline == null %}
     {% if page.social-media-description %}
       <meta itemprop="og:headline" content="{{ page.social-media-title }}" />
+      <meta itemprop="og:description" content="{{ page.social-media-description }}" />
     {% endif %}
   {% endif %}
 
