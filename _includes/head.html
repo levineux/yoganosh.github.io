@@ -95,10 +95,10 @@
   {% endif %}
   {% if page.open-graph.description == null %}
     {% if page.layout == "story" %}
-      {% if page.content contains '<!--more-->' %}
-        <meta property="og:description" content="{{ page.content | split:'<!--more-->' | first | replace: '<p>','' | replace: '</p>','' }}" />
+      {% if page.social-media-description %}
+        <meta property="og:description" content="{{ page.social-media-description }}" />
       {% else %}
-        <meta property="og:description" content="{{ page.excerpt }}" />
+        <meta property="og:description" content="{{ page.description }}" />
       {% endif %}
     {% else %}
       <meta property="og:description" content="{{ page.description }}" />
@@ -118,7 +118,7 @@
   {% endif %}
   {% if page.open-graph.headline == null %}
     {% if page.social-media-description %}
-      <meta itemprop="og:headline" content="{{ page.social-media-description }}" />
+      <meta itemprop="og:headline" content="{{ page.social-media-title }}" />
     {% endif %}
   {% endif %}
 
